@@ -1,0 +1,85 @@
+include _navigation
+
+mixin rd-navbar
+	//RD Navbar
+	header.section.rd-navbar-wrap.rd-navbar-wrap-transparent
+		nav.rd-navbar.rd-navbar-solid.rd-navbar-transparent( data-rd-navbar={
+			responsive: {
+				1200: {
+					stickUpOffset: '164px'
+				}
+			}
+		} )&attributes( attributes )
+			.navbar-section.navbar-non-stuck
+				.navbar-panel
+					button.navbar-switch.mdi-menu.novi-icon( data-multi-switch!= {
+						targets: '.rd-navbar',
+						scope: '.rd-navbar',
+						isolate: '[data-multi-switch]'
+					})
+					.navbar-logo
+						a.navbar-logo-link( href= homePage.link )
+							+img( logo.default ).navbar-logo-default( alt= logo.name )
+							+img( logo.inverse ).navbar-logo-inverse( alt= logo.name )
+
+				.navbar-container
+					.navbar-cell.flex-grow-1
+						.navbar-info
+							.list.list-icons-2
+								.list-item
+									.list-icon.icon.navbar-info-icon.onclinic-map-marker.novi-icon
+									a.link.link-inherit.small-1( href='#' ) 670 Lafayette Ave, Brooklyn, NY 11216
+
+							.navbar-logo.navbar-fullwidth-logo
+								a.navbar-logo-link( href= homePage.link )
+									+img( logo.default ).navbar-logo-default( alt= logo.name )
+									+img( logo.inverse ).navbar-logo-inverse( alt= logo.name )
+
+							.text-block.text-block-2.d-md-flex.align-items-center.justify-content-center
+								p.small-1 Have questions?
+								.list.list-icons-2
+									.list-item
+										.list-icon.icon.onclinic-phone
+										span.h5
+											a.link( href='tel:#' ) (123) 456-7890
+
+					.navbar-cell
+						.navbar-subpanel
+							.navbar-subpanel-item
+								button.navbar-button.navbar-info-button.mdi-dots-vertical.novi-icon( data-multi-switch!= {
+									targets: '.rd-navbar',
+									scope: '.rd-navbar',
+									class: 'navbar-info-active',
+									isolate: '[data-multi-switch]'
+								})
+
+							.navbar-subpanel-item
+								include _search
+
+								button.navbar-button.search-switch.onclinic-search.novi-icon( data-multi-switch!= {
+									targets: '.rd-navbar',
+									scope: '.rd-navbar',
+									class: 'navbar-search-active',
+									isolate: '[data-multi-switch]:not(.search-switch)'
+								})
+
+							.navbar-subpanel-item
+								button.navbar-button.onclinic-cart.novi-icon( data-multi-switch!= {
+									targets: '.rd-navbar',
+									scope: '.rd-navbar',
+									class: 'navbar-cart-active',
+									isolate: '[data-multi-switch]'
+								})
+									span.navbar-button-badge 3
+
+								include _cart
+
+			.navbar-section
+				.navbar-container.navbar-sidebar
+					.navbar-cell.flex-grow-1
+						+navigation( menu )
+
+					.navbar-cell.navbar-action-link
+						a.link( href='book-an-appointment.html' )
+							span.link-icon +
+							span Make Order

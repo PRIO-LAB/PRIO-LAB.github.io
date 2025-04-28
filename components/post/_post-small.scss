@@ -1,0 +1,48 @@
+// Base
+.post-small {
+	.post-title {
+		color: $primary;
+	}
+
+	.post-text {
+		font-size: px-to-rem( 16px );
+	}
+
+	.post-meta {
+		display: block;
+		font-size: px-to-rem( 12px );
+		line-height: 1;
+
+		.post-meta-item {
+			display: block;
+		}
+	}
+
+	.post-author {
+		font-weight: 600;
+	}
+
+	* + .post-meta { margin-top: px-to-rem( 11px * $xs-multiplier ) }
+	* + .post-text { margin-top: px-to-rem( 18px * $xs-multiplier ) }
+}
+
+.post-small + .post-small { margin-top: px-to-rem( 38px * $xs-multiplier ) }
+
+// Media
+@include media-breakpoint-up( lg ) {
+	.post-small {
+		* + .post-meta { margin-top: px-to-rem( 11px * $lg-multiplier ) }
+		* + .post-text { margin-top: px-to-rem( 18px * $lg-multiplier ) }
+	}
+
+	.post-small + .post-small { margin-top: px-to-rem( 38px * $lg-multiplier ) }
+}
+
+@include media-breakpoint-up( xxl ) {
+	.post-small {
+		* + .post-meta { margin-top: px-to-rem( 11px ) }
+		* + .post-text { margin-top: px-to-rem( 18px ) }
+	}
+
+	.post-small + .post-small { margin-top: px-to-rem( 38px ) }
+}

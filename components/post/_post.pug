@@ -1,0 +1,113 @@
+//- Post
+	@param {object} data - data object
+	@param {string} data.img - post image
+	@param {string} data.title - post title
+	@param {array} data.meta - post meta
+	@param {string} data.text - post text
+mixin post( data )
+	// Post
+	.post&attributes( attributes )
+		a.post-media( href='single-post.html' )
+			+img( data.img ).post-img
+		.post-title.h5: a( href='single-post.html' )= data.title
+		.post-text= data.text
+		.post-meta
+			if ( data.date )
+				.post-meta-item
+					.post-meta-icon.mdi-calendar
+					.post-date= data.date
+			if ( data.comments )
+				.post-meta-item
+					.post-meta-icon.icon.onclinic-comment
+					.post-comment= data.comments
+			if ( data.author )
+				.post-meta-item
+					.post-meta-icon.mdi-account
+					.post-author= data.author
+			if ( data.tags )
+				.post-meta-item
+					.post-tags
+						each tag, index in data.tags
+							if ( index < data.tags.length - 1 )
+								a.post-tag( href='single-post.html' )= tag
+								=', '
+							else
+								a.post-tag( href='single-post.html' )= tag
+
+//- Post boxed
+	@param {object} data - data object
+	@param {string} data.img - post image
+	@param {string} data.title - post title
+	@param {string} data.text - post text
+mixin post-boxed( data )
+	// Post boxed
+	.post.post-boxed.post-meta-align&attributes( attributes )
+		a.post-media( href='single-post.html' )
+			+img( data.img ).post-img
+		.post-body
+			.post-subtitle.title-2= data.subtitle
+			.post-title.h4
+				if ( data.iconClass )
+					span.post-icon.icon( class= data.iconClass )
+				a( href='single-post.html' )= data.title
+			.post-divider
+			.post-meta
+				.post-meta-item
+					.post-date= data.date
+				.post-meta-item
+					.post-meta-icon.icon.onclinic-comment
+					.post-date= data.comments
+
+//- Post simple
+	@param {object} data - data object
+	@param {string} data.img - post image
+	@param {string} data.title - post title
+	@param {string} data.text - post text
+mixin post-simple( data )
+	// Post simple
+	.post.post-simple&attributes( attributes )
+		if ( data.subtitle )
+			.post-subtitle= data.subtitle
+		.post-title.h6: a( href='single-post.html' )= data.title
+		if ( data.author || data.date || data.tags )
+			.post-meta.post-meta-sm
+				if ( data.author )
+					.post-meta-item
+						span= 'by '
+						span.post-author= data.author
+				if ( data.date )
+					.post-meta-item
+						span= 'posted '
+						span.post-date= data.date
+				if ( data.tags )
+					.post-meta-item
+						.post-tags
+							each tag, index in data.tags
+								if (index < data.tags.length - 1)
+									a.post-tag( href='single-post.html' )= tag
+									=', '
+								else
+									a.post-tag( href='single-post.html' )= tag
+		.post-meta
+			.post-meta-item
+				.post-meta-icon.icon.onclinic-comment
+				.post-comment= data.comments
+
+//- Post small
+	@param {object} data - data object
+	@param {string} data.img - post image
+	@param {string} data.title - post title
+	@param {string} data.text - post text
+mixin post-small( data )
+	// Post small
+	.post.post-small&attributes( attributes )
+		.post-title.h6: a( href='single-post.html' )= data.title
+		.post-meta
+			if ( data.date )
+				.post-meta-item
+					span= 'posted '
+					span.post-date= data.date
+		.post-text= data.text
+		.post-meta
+			.post-meta-item
+				span.post-author= data.author

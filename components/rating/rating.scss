@@ -1,0 +1,21 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+// Thumbnail
+.rating {
+
+}
+
+.rating-item {
+	font-size: $font-size-lg;
+	color: $yellow;
+	vertical-align: middle;
+}
+
+.rating-item-disabled {
+	color: $gray-300;
+}

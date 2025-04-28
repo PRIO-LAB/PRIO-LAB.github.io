@@ -1,0 +1,282 @@
+//- Contact form 1
+mixin contact-form-1
+	.box.box-form-1
+		.box-header
+			h3.box-title Ask us anything!
+		.box-body
+			form.rd-form.rd-mailform( data-form-output='contact-form-1', data-form-type='contact', method='post', action='components/rd-mailform/rd-mailform.php' )
+				.row.row-10.align-items-center
+					.col-12
+						.form-group
+							label.form-label( for='contact-form-1-name' ) * Full name
+							.form-control-wrap
+								input#contact-form-1-name.form-control( type='text', name='name', placeholder='e.g. Adam Smith', data-constraints='@Required' )
+					.col-md-6
+						.form-group
+							label.form-label( for='contact-form-1-email' ) * Email
+							.form-control-wrap
+								input#contact-form-1-email.form-control( type='email', name='email', placeholder='e.g. adamsmith@company.com', data-constraints='@Email @Required' )
+					.col-md-6
+						.form-group
+							label.form-label( for='contact-form-1-phone' ) * Phone number
+							.form-control-wrap
+								input#contact-form-1-phone.form-control( type='text', name='phone', placeholder='e.g. 123-456-7890', data-constraints='@Numeric @Required' )
+					.col-12
+						.form-group
+							label.form-label( for='contact-form-1-message' ) Message
+							.form-control-wrap
+								textarea#contact-form-1-message.form-control( name='textarea', placeholder='Your message', data-constraints='@Required' )
+				.row.row-10.align-items-center.mt-4
+					.col-auto
+						.rd-form-btn.text-left
+							button.btn.btn-lg.btn-primary( type='submit' ) Submit
+					.col-md-7.col-xl-8
+						.rd-form-meta.small
+							span= 'By clicking the button you agree to the '
+							a.link( href='privacy-policy.html' ) Privacy Policy
+							br.d-none.d-xl-inline
+							span= ' and '
+							a.link( href='terms-of-use.html' ) Terms of Service
+							span= ' .'
+			#contact-form-1.form-output.snackbar.snackbar-primary
+
+//- Call to action
+mixin cta-1
+	.container
+		.row.row-40.justify-content-center.text-center
+			.col-md-8.col-lg-6
+				h2 Get in touch with our managers
+				.text-block.text-block-2
+					p Have questions?
+					.list.list-icons-2
+						.list-item
+							span.list-icon.onclinic-phone
+							span.h4
+								a.link( href='tel:#' ) (123) 456-7890
+				.btn-group-1
+					a.btn.btn-lg.btn-primary( href='contacts.html' ) Get In Touch
+
+//- Call to action image bottom
+mixin cta-image-bottom
+	.container.text-center( style='padding-bottom: 1px' )
+		.row.row-40.justify-content-center
+			.col-md-10.col-lg-8
+				h2 Get your reliable drone today at an affordable price
+				p We provide a selection of drones for you to choose from.
+				.btn-group-1
+					a.btn.btn-lg.btn-primary( href='contacts.html' ) Get in Touch
+		+img( 'product-05-1147x478.png' )
+
+//- Accordion line
+mixin accordion-line
+	.accordion.accordion-line
+		.accordion-item.active
+			.accordion-head.h5 How can I change something in my order?
+			.accordion-body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+		.accordion-item
+			.accordion-head.h5 How can I pay for my order?
+			.accordion-body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+		.accordion-item
+			.accordion-head.h5 Can I track my order?
+			.accordion-body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+		.accordion-item
+			.accordion-head.h5 How long will my order take to be delivered?
+			.accordion-body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+		.accordion-item
+			.accordion-head.h5 Can I return an item?
+			.accordion-body Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+
+
+
+//- Blurb 1 content
+include ../blurb/_blurb
+mixin blurb-1-content
+	.text-block.text-block-1
+		.title-1 Advantages
+		h3 Good vision for many years
+	.row.row-30.row-content.justify-content-center.justify-content-md-start
+		.col-xs-6.col-md-4
+			+blurb({
+				iconClass: 'fa-check',
+				title: 'Highest professional level',
+				text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.'
+			}).blurb-2
+		.col-xs-6.col-md-4
+			+blurb({
+				iconClass: 'fa-check',
+				title: 'Individual treatment program',
+				text: 'Lacus vestibulum sed arcu non odio. Egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam. '
+			}).blurb-2
+		.col-xs-6.col-md-4
+			+blurb({
+				iconClass: 'fa-check',
+				title: 'Equipment with international standards',
+				text: 'Dui accumsan sit amet nulla facilisi morbi. Nibh ipsum consequat nisl vel pretium.'
+			}).blurb-2
+
+//- Quote cloud content
+include ../quote/_quote
+mixin quote-cloud
+	.row.row-30.row-content
+		.col-sm-6.col-xl-3
+			+quote-clouded({
+				iconClass: 'onclinic-quote',
+				quote: 'Кat imperdiet sed euismod nisi porta lorem mollis. Eget arcu dictum varius duis at consectetur lorem. Arcu odio ut sem nulla pharetra diam...',
+				authorImg: 'person-06-64x64',
+				authorName: 'Eliza',
+				authorMeta: '2 months ago'
+			})
+		.col-sm-6.col-xl-3
+			+quote-clouded({
+				iconClass: 'onclinic-quote',
+				quote: 'Turpis nunc eget lorem dolor sed. Felis donec et odio pellentesque diam volutpat. Diam phasellus vestibulum.',
+				authorImg: 'person-07-64x64',
+				authorName: 'Matt Cowger',
+				authorMeta: '2 months ago'
+			})
+		.col-sm-6.col-xl-3
+			+quote-clouded({
+				iconClass: 'onclinic-quote',
+				quote: 'Fames ac turpis egestas sed tempus urna et. Nisl vel pretium lectus quam id.',
+				authorImg: 'person-08-64x64',
+				authorName: 'Michael Lee',
+				authorMeta: '2 months ago'
+			})
+		.col-sm-6.col-xl-3
+			+quote-clouded({
+				iconClass: 'onclinic-quote',
+				quote: 'Pellentesque id nibh tortor id aliquet lectus proin nibh nisl. Tellus rutrum tellus pellentesque eu. Viverra aliquet eget sit amet tellus cras.',
+				authorImg: 'person-09-64x64',
+				authorName: 'John Puddephatt‏‏',
+				authorMeta: '2 months ago'
+			})
+
+//- Astigmatism page
+mixin content-block
+	.big Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+	.btn-group-1
+		a.btn.btn-lg.btn-dark( href='book-an-appointment.html' )
+			span.btn-icon.onclinic-book
+			span Book an Appointment
+	figure
+		+img( 'image-10-840x630' ).image
+		figcaption Image description
+	h2 1. Sample paragraph text with images
+	p.big Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.
+	.row.row-text.row-20
+		.col-sm-6
+			figure
+				+img( 'image-12-400x300' ).image
+				figcaption Image description
+		.col-sm-6
+			figure
+				+img( 'image-13-400x300' ).image
+				figcaption Image description
+	h2 2. Sample lists
+	p.big Conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+	h3 2. 1. Sample unordered list
+	p.big Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+	ul.list.list-marked.big
+		li.list-item Magnis dis parturient montes nascetur
+		li.list-item
+			| Libero id faucibus nisl tincidunt eget
+			ul.list.list-marked
+				li.list-item Magnis dis parturient montes nascetur
+				li.list-item Magnis dis parturient montes nascetur
+		li.list-item Magnis dis parturient montes nascetur
+	h3 2. 2. Sample ordered  list
+	p.big Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+	ul.list.list-ordered.big
+		li.list-item Lorem ipsum dolor sit amet conse ctetur adipisicing elit;
+		li.list-item
+			| Sed do eiusmod ut labore et dolore magna aliqua;
+			ul.list.list-ordered
+				li.list-item Quis nostrud exercitation ullamco laboris nisi ut aliquip;
+				li.list-item Duis aute irure dolor in reprehenderit;
+
+//- Single service page
+mixin content-block-1
+	.big Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+	.btn-group-1
+		a.btn.btn-lg.btn-dark( href='book-an-appointment.html' )
+			span.btn-icon.onclinic-book
+			span Book an Appointment
+	figure
+		+img( 'image-09-840x630' ).image
+		figcaption Image description
+	h2 1. Sample paragraph text with images
+	p.big Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.
+	.row.row-text.row-20
+		.col-sm-6
+			figure
+				+img( 'image-10-400x300' ).image
+				figcaption Image description
+		.col-sm-6
+			figure
+				+img( 'image-11-400x300' ).image
+				figcaption Image description
+	h2 2. Sample lists
+	p.big Conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+	h3 2. 1. Sample unordered list
+	p.big Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+	ul.list.list-marked.big
+		li.list-item Magnis dis parturient montes nascetur
+		li.list-item
+			| Libero id faucibus nisl tincidunt eget
+			ul.list.list-marked
+				li.list-item Magnis dis parturient montes nascetur
+				li.list-item Magnis dis parturient montes nascetur
+		li.list-item Magnis dis parturient montes nascetur
+	.box.box-cta.bg-800.context-dark
+		h3 Make an appointment with an ophthalmologist
+		.box-body
+			div
+				.text-block.text-block-2
+					p Have questions?
+					.list.list-icons-2
+						.list-item
+							.list-icon.mdi-phone
+							span.h4: a.link( href='#' ) (123) 456-7890
+			div
+				a.btn.btn-lg.btn-primary( href='book-an-appointment.html' )
+					span.btn-icon.onclinic-book
+					span Book an Appointment
+	h3 2. 2. Sample ordered  list
+	p.big Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+	ul.list.list-ordered.big
+		li.list-item Lorem ipsum dolor sit amet conse ctetur adipisicing elit;
+		li.list-item
+			| Sed do eiusmod ut labore et dolore magna aliqua;
+			ul.list.list-ordered
+				li.list-item Quis nostrud exercitation ullamco laboris nisi ut aliquip;
+				li.list-item Duis aute irure dolor in reprehenderit;
+	h2 3. Sample Price
+	.table-container.table-responsive
+		table.table.table-separate
+			thead
+				tr
+					th Name of dervice
+					th.text-center Price:
+			tbody
+				tr
+					td Lorem ipsum dolor sit ame consectetur adipiscing eli
+					td.h5.text-center.text-primary $785
+				tr
+					td Odio ut sem nulla pharetra diam sit amet
+					td.h5.text-center.text-primary $85
+				tr
+					td Adipiscing diam donec adipiscing tristique risus
+					td.h5.text-center.text-primary $132
+				tr
+					td Risus commodo viverra maecenas accumsan lacus
+					td.h5.text-center.text-primary $98
+				tr
+					td Mauris nunc congue nisi vitae
+					td.h5.text-center.text-primary $54
+				tr
+					td Pretium aenean pharetra magna ac placerat
+					td.h5.text-center.text-primary $68
+	.btn-group-1
+		a.btn.btn-lg.btn-dark( href='#' )
+			span.btn-icon.onclinic-book
+			span Book ab Appointment

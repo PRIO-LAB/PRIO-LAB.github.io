@@ -1,0 +1,43 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+// Base
+.person-link {
+	display: inline-block;
+}
+
+.person-meta {
+	color: $secondary;
+}
+
+* + .person-title { margin-top: px-to-rem( 40px * $xs-multiplier ) }
+* + .person-meta { margin-top: px-to-rem( 8px * $xs-multiplier ) }
+* + .person-text { margin-top: px-to-rem( 33px * $xs-multiplier ) }
+* + .person-link { margin-top: px-to-rem( 30px * $xs-multiplier ) }
+
+
+// Media
+@include media-breakpoint-up( lg ) {
+	* + .person-title { margin-top: px-to-rem( 40px * $lg-multiplier ) }
+	* + .person-meta { margin-top: px-to-rem( 8px * $lg-multiplier ) }
+	* + .person-text { margin-top: px-to-rem( 33px * $lg-multiplier ) }
+	* + .person-link { margin-top: px-to-rem( 30px * $lg-multiplier ) }
+}
+
+@include media-breakpoint-up( xxl ) {
+	* + .person-title { margin-top: px-to-rem( 40px ) }
+	* + .person-meta { margin-top: px-to-rem( 8px ) }
+	* + .person-text { margin-top: px-to-rem( 33px ) }
+	* + .person-link { margin-top: px-to-rem( 30px ) }
+}
+
+
+// Layouts
+@import "person-side";
+@import "person-post";
+@import "person-book";
+@import "person-social";

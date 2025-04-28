@@ -1,0 +1,125 @@
+// Variables
+$pag-light-color: $primary;
+$pag-light-active-color: $primary;
+$pag-light-hover-color: $secondary;
+$pag-light-bg: transparent;
+$pag-light-active-bg: $gray-400;
+$pag-light-disabled-color: $pagination-disabled-color;
+
+// Base
+.pag-light {
+	font-weight: 500;
+	font-size: $h6-font-size;
+
+	.pag-link {
+		position: relative;
+		z-index: 0;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		color: $pag-light-color;
+		background-color: $pag-light-bg;
+		border-radius: $border-radius;
+		transition: $transition-base;
+
+		&::before {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			z-index: -1;
+			width: calc( 100% + 30px * #{$xs-multiplier} );
+			height: px-to-rem( 64px * $xs-multiplier );
+			background-color: $pag-light-active-bg;
+			content: '';
+			transform: translate( -50%, -50% );
+			border-radius: $border-radius;
+			opacity: 0;
+			pointer-events: none;
+		}
+
+		&:hover {
+			color: $pag-light-hover-color;
+		}
+
+		&.inactive {
+			pointer-events: none;
+		}
+	}
+
+	.pag-icon {
+		font-size: px-to-rem( 20px );
+	}
+
+	.pag-item {
+		&.active {
+			.pag-link {
+				color: $pag-light-active-color;
+
+				&:before {
+					opacity: 1;
+				}
+			}
+		}
+
+		&.disabled {
+			.pag-link {
+				color: $pag-light-disabled-color;
+				pointer-events: none;
+				opacity: .7;
+			}
+		}
+
+		&.pag-mobile-hide {
+			display: none;
+		}
+
+		&:not(:last-child) {
+			margin-right: px-to-rem( 40px * $xs-multiplier );
+		}
+	}
+}
+
+
+// Media
+@include media-breakpoint-up( sm ) {
+	.pag-light {
+		.pag-item {
+			&.pag-mobile-hide {
+				display: inline-flex;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up( lg ) {
+	.pag-light {
+		.pag-link {
+			&::before {
+				width: calc( 100% + 30px * #{$lg-multiplier} );
+				height: px-to-rem( 64px * $lg-multiplier );
+			}
+		}
+
+		.pag-item {
+			&:not(:last-child) {
+				margin-right: px-to-rem( 27px * $lg-multiplier );
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up( xxl ) {
+	.pag-light {
+		.pag-link {
+			&::before {
+				width: calc( 100% + 30px );
+				height: px-to-rem( 64px );
+			}
+		}
+		.pag-item {
+			&:not(:last-child) {
+				margin-right: px-to-rem( 27px );
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+.widget
+	.widget-title.h5 Filter by price
+	.widget-body
+		// RD Range
+		.rd-range-meta
+			.rd-range-value
+				.rd-range-form-wrap
+					.rd-range-label Price:
+				.rd-range-form-wrap
+					span $
+					input.rd-range-input.rd-range-input-value-1.rd-range-input-2-symbol( type='text', name='value-1', size='1' )
+				.rd-range-form-wrap
+					span.mx-1= ' — '
+				.rd-range-form-wrap
+					span $
+					input.rd-range-input.rd-range-input-value-2( type='text', name='value-2', size='1' )
+		.rd-range(
+			data-min='0',
+			data-max='100',
+			data-min-diff='10',
+			data-start='[11, 78]',
+			data-step='1',
+			data-input='.rd-range-input-value-1',
+			data-input-2='.rd-range-input-value-2'
+		)

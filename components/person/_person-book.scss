@@ -1,0 +1,33 @@
+// Base
+.person-book {
+	.person-title {
+		color: $primary;
+	}
+
+	.person-meta {
+		font-size: $font-size-sm;
+		color: inherit;
+	}
+
+	.person-date-icon {
+		margin-right: px-to-rem( 6px );
+		color: $primary-light;
+	}
+
+	* + .person-meta { margin-top: px-to-rem( 3px ) }
+	* + .person-date { margin-top: px-to-rem( 10px ) }
+}
+
+
+// Media
+@include media-breakpoint-up( lg ) {
+	.person-book {
+		* + .person-date { margin-top: px-to-rem( 10px * $lg-multiplier ) }
+	}
+}
+
+@include media-breakpoint-up( xxl ) {
+	.person-book {
+		* + .person-date { margin-top: px-to-rem( 10px ) }
+	}
+}

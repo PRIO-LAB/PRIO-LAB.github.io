@@ -1,0 +1,50 @@
+// Cart
+section.section.section-md.bg-transparent
+	.container
+		.text-block
+			h1 Cart
+		.row.row-30.row-content
+			.col-md-8
+				.table-responsive
+					table.table.table-1
+						tr
+							td: .icon.mdi-delete
+							td: div( style='width: 80px' ):  +img( 'product-02-80x80' )
+							td: a.link.link-inherit( href='single-product.html' ) DJI Inspire 2
+							td.h5 $29
+							td: .spinner-form-wrap: input( type='number', value='1', name='qty', data-spinner )
+							td.h5 $29
+						tr
+							td: .icon.mdi-delete
+							td: div( style='width: 80px' ): +img( 'product-03-80x80' )
+							td: a.link.link-inherit( href='single-product.html' ) DJI Mavic Pro 2
+							td.h5 $34
+							td: .spinner-form-wrap: input( type='number', value='1', name='qty', data-spinner )
+							td.h5 $34
+						tr
+							td: .icon.mdi-delete
+							td: div( style='width: 80px' ): +img( 'product-04-80x80' )
+							td: a.link.link-inherit( href='single-product.html' ) Parrot Anafi Thermal Drone
+							td.h5 $31
+							td: .spinner-form-wrap: input( type='number', value='1', name='qty', data-spinner )
+							td.h5 $31
+
+				.group-20.group-offset-1.d-flex.flex-wrap.justify-content-between
+					div
+						form.rd-form.rd-form-inline.justify-content-start
+							.form-group
+								.form-validation-wrap
+									input.form-control( type='text', name='promocode', placeholder='Coupone code' )
+							button.btn.btn-dark( type='submit' ) Apply
+					div
+						a.btn( href='#' ) Update cart
+
+				a.link.link-offset-2.link-sm.font-weight-medium( href='#' ) &lt; Edit
+
+			.col-md-4.d-flex
+				.box.box-solid
+					.box-subtitle.h5 Cart total
+					.box-prices
+						.box-price-sm Subtotal: $94
+						.box-price-md.h3 Total: $94
+					a.box-btn.btn.btn-block.btn-lg.btn-primary( href='#' ) Proceed to Checkout

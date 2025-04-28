@@ -1,0 +1,49 @@
+// Base
+.person-post {
+	padding-top: px-to-rem( 50px );
+	text-align: center;
+
+	.person-body {
+		padding: px-to-rem( 0, 15px, 30px );
+		background-color: $gray-400;
+	}
+
+	.person-img {
+		margin-top: px-to-rem( -50px );
+		width: px-to-rem( 100px );
+		border-radius: 50%;
+	}
+
+	.person-subtitle {
+		color: $primary;
+	}
+
+	* + .person-subtitle { margin-top: px-to-rem( 19px * $xs-multiplier ) }
+	* + .person-title { margin-top: px-to-rem( 21px * $xs-multiplier ) }
+	* + .person-text { margin-top: px-to-rem( 21px * $xs-multiplier ) }
+}
+
+// Media
+@include media-breakpoint-up( lg ) {
+	.person-post {
+		.person-body {
+			padding: px-to-rem( 0, 40px * $lg-multiplier, 52px * $lg-multiplier );
+		}
+
+		* + .person-subtitle { margin-top: px-to-rem( 19px * $lg-multiplier ) }
+		* + .person-title { margin-top: px-to-rem( 21px * $lg-multiplier ) }
+		* + .person-text { margin-top: px-to-rem( 21px * $lg-multiplier ) }
+	}
+}
+
+@include media-breakpoint-up( xxl ) {
+	.person-post {
+		.person-body {
+			padding: px-to-rem( 0, 40px, 52px );
+		}
+
+		* + .person-subtitle { margin-top: px-to-rem( 19px ) }
+		* + .person-title { margin-top: px-to-rem( 21px ) }
+		* + .person-text { margin-top: px-to-rem( 21px ) }
+	}
+}

@@ -1,0 +1,59 @@
+include ../rating/_rating
+
+// Single product
+section.section.section-md.bg-transparent
+	.container
+		.row.row-30
+			.col-sm-6.d-flex
+				.slick-product-container
+					.slick-slider.slick-product.slider-for( data-slick!={ arrows: false, asNavFor: '.slider-nav', autoplay: true, autoplaySpeed: 5000, fade: true } )
+						.slick-content: +img( 'product-02-510x510' )
+						.slick-content: +img( 'product-01-510x510' )
+					.slick-slider.slick-product-nav.slider-nav( data-slick!={ slidesToShow: 3, arrows: false, asNavFor: '.slider-for', focusOnSelect: true, variableWidth: true } )
+						.slick-content: +img( 'product-02-55x55' )
+						.slick-content: +img( 'product-01-55x55' )
+
+			.col-sm-6
+				.product.product-overview
+					.tag.tag-sm Sale
+					h3.product-title DJI Mavic 2 Pro
+					.product-price.h4 $29
+					.product-meta
+						div
+							+rating.product-rating
+						div
+							.product-meta-link 0 Reviews
+					.product-text Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+					.form-group.product-select
+						label.form-label.d-block( for='product-select' ) * Options
+						.select-wrap.d-inline-block( style='min-width:200px' )
+							select#product-select.select2( name='price', data-select2-options!={placeholder: 'Select an option'} )
+								option( label='placeholder' )
+								option Drone + RC
+								option Drone + accessories
+					.product-check
+						.spinner-form-wrap
+							label.form-label( for='product-spinner' ) QTY:
+							input#product-spinner( type='number', value='1', name='qty', data-spinner )
+						a.btn.btn-lg.btn-dark( href='#' )
+							span.btn-icon.onclinic-cart
+							span Add to cart
+						a.btn.btn-lg.btn-primary( href='#' )
+							span.btn-icon.mdi-heart
+							span Add to Wishlist
+					.product-term
+						.product-term-item
+							span.product-term-title= 'SKU: '
+							span.product-term-description 001
+						.product-term-item
+							span.product-term-title= 'Category: '
+							span.product-term-description: a( href='#' ) Drones
+						.product-term-item
+							span.product-term-title= 'Tag: '
+							span.product-term-description: a( href='#' ) DJI
+					.product-social.social
+						a( href='#' ).social-icon.icon.icon-md.icon-link.icon-primary-light.mdi-facebook
+						a( href='#' ).social-icon.icon.icon-md.icon-link.icon-primary-light.mdi-twitter
+						a( href='#' ).social-icon.icon.icon-md.icon-link.icon-primary-light.mdi-pinterest
+						a( href='#' ).social-icon.icon.icon-md.icon-link.icon-primary-light.mdi-whatsapp
+						a( href='mailto:#' ).social-icon.icon.icon-md.icon-link.icon-primary-light.mdi-email

@@ -1,0 +1,110 @@
+// Base
+.product-extended {
+	.product-media {
+		position: relative;
+		text-align: center;
+		box-shadow: $box-shadow-sm;
+	}
+
+	.product-img {
+		width: auto;
+	}
+
+	.product-meta {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		padding: px-to-rem( 10px );
+	}
+
+	.product-tags {
+		.tag {
+			display: block;
+		}
+
+		.tag + .tag {
+			margin-top: px-to-rem( 2px );
+		}
+	}
+
+	.product-like-icon {
+		justify-content: center;
+		align-items: center;
+		width: px-to-rem( 54px );
+		height: px-to-rem( 54px );
+		font-size: px-to-rem( 22px );
+		color: $white;
+		background-color: $dark;
+		border-radius: 50%;
+		transition: $transition-base;
+		cursor: pointer;
+
+		&:hover {
+			background-color: $primary;
+		}
+	}
+
+	.product-text {
+		font-weight: 500;
+	}
+
+	.product-price {
+		font-weight: 500;
+		color: $primary;
+	}
+
+	* + .product-rating { margin-top: px-to-rem( 18px * $xs-multiplier ) }
+	* + .product-title { margin-top: px-to-rem( 13px * $xs-multiplier ) }
+	* + .product-text { margin-top: px-to-rem( 17px * $xs-multiplier ) }
+	* + .product-price { margin-top: px-to-rem( 15px * $xs-multiplier ) }
+	* + .product-btn { margin-top: px-to-rem( 19px * $xs-multiplier ) }
+}
+
+
+// Desktop context
+.desktop {
+	.product-extended {
+		.product-media {
+			box-shadow: none;
+		}
+
+		.product-tags,
+		.product-like {
+			transform: scale( 0 );
+			transition: $transition-base;
+		}
+
+		&:hover {
+			.product-tags,
+			.product-like {
+				transform: scale( 1 );
+			}
+		}
+	}
+}
+
+// Media
+@include media-breakpoint-up( lg ) {
+	.product-extended {
+		* + .product-rating { margin-top: px-to-rem( 18px * $lg-multiplier ) }
+		* + .product-title { margin-top: px-to-rem( 13px * $lg-multiplier ) }
+		* + .product-text { margin-top: px-to-rem( 17px * $lg-multiplier ) }
+		* + .product-price { margin-top: px-to-rem( 15px * $lg-multiplier ) }
+		* + .product-btn { margin-top: px-to-rem( 19px * $lg-multiplier ) }
+	}
+}
+
+@include media-breakpoint-up( xxl ) {
+	.product-extended {
+		* + .product-rating { margin-top: px-to-rem( 18px ) }
+		* + .product-title { margin-top: px-to-rem( 13px ) }
+		* + .product-text { margin-top: px-to-rem( 17px ) }
+		* + .product-price { margin-top: px-to-rem( 15px ) }
+		* + .product-btn { margin-top: px-to-rem( 19px ) }
+	}
+}

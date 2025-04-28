@@ -1,0 +1,26 @@
+include ../person/_person
+
+// Team social
+section.section.section-md.bg-200.text-center
+	.container
+		.text-block
+			h3 Meet our team
+		.row.row-30.row-content.justify-content-center
+			.col-sm-6.col-md-4
+				+person-social({
+					img: 'person-01-360x270',
+					title: 'Adam Smith',
+					text: 'Founder, CEO'
+				})
+			.col-sm-6.col-md-4
+				+person-social({
+					img: 'person-02-360x270',
+					title: 'Jennifer Wilson',
+					text: 'Sales Manager'
+				})
+			.col-sm-6.col-md-4
+				+person-social({
+					img: 'person-03-360x270',
+					title: 'John McMillan',
+					text: 'Marketing Manager'
+				})

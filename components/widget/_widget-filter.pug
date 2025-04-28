@@ -1,0 +1,16 @@
+include ../input/_input
+
+.widget
+	.widget-title.h5 Product Categories
+	.widget-body
+		+checkbox-filter({
+			name: 'cartFilter1',
+			checked: true,
+			text: 'Drones',
+			count: '3'
+		})
+		+checkbox-filter({
+			name: 'cartFilter1',
+			text: 'Eyeglasses',
+			count: '3'
+		})

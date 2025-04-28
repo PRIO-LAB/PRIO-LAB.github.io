@@ -1,0 +1,79 @@
+include ../base/_svg-elements
+
+//- Blurb
+	@param {object} data - data object
+	@param {string} data.iconClass - class for icon
+	@param {string} data.title - blurb title
+	@param {string} [data.text] - blurb text
+mixin blurb( data )
+	// Blurb
+	article.blurb&attributes( attributes )
+		.icon.blurb-icon( class= data.iconClass )
+		.blurb-title.h5= data.title
+		if( data.text )
+			.blurb-text= data.text
+
+//- Blurb number
+	@param {object} data - data object
+	@param {string} data.iconClass - class for icon
+	@param {string} data.title - blurb title
+	@param {string} [data.text] - blurb text
+mixin blurb-number( data )
+	// Blurb
+	article.blurb&attributes( attributes )
+		.icon.blurb-number.h4= data.number
+		.blurb-title.h5= data.title
+		if( data.text )
+			.blurb-text.small-1= data.text
+
+//- Blurb
+	@param {object} data - data object
+	@param {string} data.iconClass - class for icon
+	@param {string} data.title - blurb title
+	@param {string} [data.text] - blurb text
+mixin blurb-svg-icon( data )
+	// Blurb
+	article.blurb&attributes( attributes )
+		.blurb-icons-wrap
+			.icon.blurb-icon( class= data.iconClass )
+		.blurb-text= data.text
+
+//- Blurb simple
+	@param {object} data - data object
+	@param {string} data.iconClass - class for icon
+	@param {string} data.title - blurb title
+	@param {string} [data.text] - blurb text
+mixin blurb-simple( data )
+	// Blurb
+	article.blurb.blurb-simple&attributes( attributes )
+		.blurb-item
+			.icon.blurb-icon( class= data.iconClass )
+			.blurb-title= data.title
+		if( data.text )
+			.blurb-body
+					.blurb-text= data.text
+
+//- Blurb boxed simple
+	@param {object} data - data object
+	@param {string} data.iconClass - class for icon
+	@param {string} data.title - blurb title
+	@param {string} [data.text] - blurb text
+mixin blurb-boxed-simple( data )
+	// Blurb
+	article.blurb.blurb-boxed-simple&attributes( attributes )
+		.blurb-item
+			.icon.blurb-icon( class= data.iconClass )
+			.blurb-title.h4= data.title
+		a.blurb-link-overlay( href='single-purpose.html' )
+
+//- Blurb micro
+	@param {object} data - data object
+	@param {string} data.iconClass - class for icon
+	@param {string} data.title - blurb title
+	@param {string} [data.text] - blurb text
+mixin blurb-micro( data )
+	// Blurb
+	article.blurb.blurb-micro&attributes( attributes )
+		.icon.blurb-icon( class= data.iconClass )
+		.blurb-value.h4= data.value
+		.blurb-title.small-1!= data.title

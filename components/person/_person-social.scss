@@ -1,0 +1,33 @@
+// Base
+.person-social {
+	text-align: center;
+
+	.person-text {
+		font-size: px-to-rem( 15px );
+	}
+
+	.social {
+		@include group( px-to-rem( 30px ), px-to-rem( 15px ) );
+	}
+
+	* + .person-title { margin-top: px-to-rem( 40px * $xs-multiplier ) }
+	* + .person-text { margin-top: px-to-rem( 16px * $xs-multiplier ) }
+	* + .social { margin-top: px-to-rem( 22px * $xs-multiplier ) }
+}
+
+// Media
+@include media-breakpoint-up( lg ) {
+	.person-social {
+		* + .person-title { margin-top: px-to-rem( 40px * $lg-multiplier ) }
+		* + .person-text { margin-top: px-to-rem( 16px * $lg-multiplier ) }
+		* + .social { margin-top: px-to-rem( 22px * $lg-multiplier ) }
+	}
+}
+
+@include media-breakpoint-up( xxl ) {
+	.person-social {
+		* + .person-title { margin-top: px-to-rem( 40px ) }
+		* + .person-text { margin-top: px-to-rem( 16px ) }
+		* + .social { margin-top: px-to-rem( 22px ) }
+	}
+}

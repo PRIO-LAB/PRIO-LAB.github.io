@@ -1,0 +1,26 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+// Base
+.comment-meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	@include group( px-to-rem( 15px), px-to-rem( 10px ) )
+}
+
+.comment-link {
+	display: inline-block;
+
+	> * {
+		vertical-align: middle;
+	}
+}
+
+// Layouts
+@import "comment-clouds";
+@import "comment-simple";

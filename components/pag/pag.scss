@@ -1,0 +1,41 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+
+// Base
+.pag {
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+	padding-left: 0;
+}
+
+
+// Spacing
+* + .pag { margin-top: px-to-rem( 80px * $xs-multiplier ); }
+.post-side + .pag { margin-top: px-to-rem( 35px ); }
+
+
+// Media
+@include media-breakpoint-up( md ) {
+	.post-side + .pag { margin-top: px-to-rem( 70px ); }
+}
+
+@include media-breakpoint-up( lg ) {
+	* + .pag { margin-top: px-to-rem( 80px * $lg-multiplier ); }
+	.post-side + .pag { margin-top: px-to-rem( 80px ); }
+}
+
+@include media-breakpoint-up( xxl ) {
+	* + .pag { margin-top: px-to-rem( 80px ); }
+	.post-side + .pag { margin-top: px-to-rem( 101px ); }
+}
+
+
+// Layouts
+@import "pag-light";
+@import "pag-extended";

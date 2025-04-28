@@ -1,0 +1,47 @@
+// Contact us 1
+section.section.section-md.bg-200.section-offset-3
+	.container
+		.row.row-40.align-items-center.justify-content-between
+			.col-md-6.col-lg-5
+				h2 Get in touch with our managers today
+				.text-block.text-block-2
+					p Have questions?
+					.list.list-icons-2
+						.list-item
+							.list-icon.icon.onclinic-phone
+							a.link.h4( href='tel:#' ) (123) 456-7890
+				.btn-group-1
+					a.btn.btn-lg( href='contacts.html' ) Contact Us
+
+			.col-md-6
+				.box.box-form-1.section-offset-item
+					.box-header
+						h3.box-title Ask us anything!
+					.box-body
+						form.rd-form.rd-mailform( data-form-output='contact-form-1', data-form-type='contact', method='post', action='components/rd-mailform/rd-mailform.php' )
+							.form-group
+								label.form-label( for='contact-1-name' ) * Full name
+								.form-control-wrap
+									input#contact-1-name.form-control( type='text', name='name', placeholder='e.g. Adam Smith', data-constraints='@Required' )
+							.form-group
+								label.form-label( for='contact-1-email' ) * Email
+								.form-control-wrap
+									input#contact-1-email.form-control( type='email', name='email', placeholder='e.g. adamsmith@company.com', data-constraints='@Email @Required' )
+							.form-group
+								label.form-label( for='contact-1-phone' ) * Phone number
+								.form-control-wrap
+									input#contact-1-phone.form-control( type='text', name='phone', placeholder='e.g. 123-456-7890', data-constraints='@Numeric @Required' )
+							.form-group
+								label.form-label( for='contact-1-message' ) Message
+								.form-control-wrap
+									textarea#contact-1-message.form-control( name='textarea', placeholder='Your message', data-constraints='@Required' )
+							.rd-form-btn.text-left
+								button.btn.btn-lg.btn-primary( type='submit' ) Get In Touch
+							.rd-form-meta.small-1
+								span= 'By clicking the button you agree to the '
+								a.link.link-underline( href='privacy-policy.html' ) Privacy Policy
+								br.d-none.d-lg-inline
+								span= ' and '
+								a.link.link-underline( href='terms-of-use.html' ) Terms of Service
+								span= ' .'
+						#contact-form-1.form-output.snackbar.snackbar-primary

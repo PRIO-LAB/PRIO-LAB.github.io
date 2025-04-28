@@ -1,0 +1,19 @@
+// Base
+.quote-3 {
+	padding-top: px-to-rem( 10px );
+
+	.quote-icon {
+		position: absolute;
+		left: px-to-rem( -10px );
+		top: 0;
+		opacity: .2;
+	}
+}
+
+
+// Media
+@include media-breakpoint-up( lg ) {
+	.quote-3 {
+
+	}
+}

@@ -1,0 +1,119 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+// Base
+.rd-calendar {
+	overflow: hidden;
+}
+
+// Panel
+.rdc-panel {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.rdc-next,
+.rdc-prev {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	line-height: 1;
+	cursor: pointer;
+	transition: $transition-base;
+}
+
+.rdc-next:hover,
+.rdc-prev:hover {
+	color: $primary;
+}
+
+// Table
+.rdc-table {
+	position: relative;
+	margin-top: px-to-rem( 20px );
+	width: 100%;
+
+	table {
+		width: 100%;
+
+		td {
+			text-align: center;
+		}
+	}
+}
+
+// Weeks
+.rdc-table_day {
+	text-align: center;
+	transition: $transition-base;
+}
+
+
+// Days
+.rdc-table_date {
+	transition: $transition-base;
+}
+
+.rdc-table_has-events {
+	.rdc-table_date {
+		cursor: pointer;
+	}
+}
+
+
+// Events
+.rdc-table_events {
+	display: none;
+}
+
+
+.rdc-table_events-count {
+	display: none;
+}
+
+.rdc-events {
+	display: none;
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+}
+
+// Single event
+.rdc-event-title {
+	padding-right: px-to-rem( 20px );
+}
+
+.rdc-event-meta-item {
+	position: relative;
+	display: inline-block;
+	margin-right: px-to-rem( 20px );
+
+	&:not(:last-child) {
+		&::before {
+			position: absolute;
+			right: px-to-rem( -12px );
+			top: 50%;
+			height: 1em;
+			transform: translateY( -50% );
+			border-right: 1px solid;
+			content: '';
+		}
+	}
+}
+
+.rdc-event-block + .rdc-event-block {
+	margin-top: px-to-rem( 20px );
+	padding-top: px-to-rem( 20px );
+	border-top: 1px solid $border-color;
+}
+
+* + .rdc-event-meta { margin-top: px-to-rem( 10px ); }
+* + .rdc-event-btn { margin-top: px-to-rem( 15px ); }
+
+// Layouts
+@import "rd-calendar-booking";

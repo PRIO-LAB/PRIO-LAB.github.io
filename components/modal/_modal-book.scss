@@ -1,0 +1,59 @@
+// Base
+.modal-book {
+	.modal-content {
+		border: none;
+	}
+
+	.modal-header {
+		align-items: center;
+		padding: px-to-rem( 25px, 15px );
+		color: $white;
+		background-color: $primary;
+
+		.close {
+			margin: 0;
+			padding: 0;
+			font-size: px-to-rem( 30px );
+			color: inherit;
+			transition: $transition-base;
+
+			&:hover {
+				opacity: .5;
+			}
+		}
+	}
+
+	.modal-body {
+		padding: px-to-rem( 25px, 15px );
+	}
+
+	.modal-title {
+		color: inherit;
+	}
+}
+
+
+// Media
+@include media-breakpoint-up( lg ) {
+	.modal-book {
+		.modal-header {
+			padding: px-to-rem( 28px * $lg-multiplier, 49px * $lg-multiplier );
+		}
+
+		.modal-body {
+			padding: px-to-rem( 50px  * $lg-multiplier, 50px  * $lg-multiplier );
+		}
+	}
+}
+
+@include media-breakpoint-up( xxl ) {
+	.modal-book {
+		.modal-header {
+			padding: px-to-rem( 28px, 49px );
+		}
+
+		.modal-body {
+			padding: px-to-rem( 50px, 50px );
+		}
+	}
+}

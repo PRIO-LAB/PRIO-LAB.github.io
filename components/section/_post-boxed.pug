@@ -1,0 +1,70 @@
+include ../post/_post
+include ../pag/_pag
+
+// Post boxed
+section.section.section-md.bg-transparent
+	.container
+		h1.text-center Our news
+		.row.row-content.row-40
+			.col-xs-6.col-md-4
+				+post-boxed({
+					img: 'image-16-360x270',
+					subtitle: 'News',
+					title: 'How Good is DJI Mavic Air 2?',
+					date: 'September 16, 2020',
+					comments: '0'
+				})
+			.col-xs-6.col-md-4
+				+post-boxed({
+					img: 'image-06-360x270',
+					subtitle: 'News',
+					title: 'Top 8 DJI Osmo Action Accessories',
+					date: 'September 16, 2020',
+					comments: '0'
+				})
+			.col-xs-6.col-md-4
+				+post-boxed({
+					img: 'image-23-360x270',
+					subtitle: 'News',
+					title: 'Top 15 Aerial Photography Tips',
+					date: 'September 16, 2020',
+					comments: '0'
+				})
+
+			.col-xs-6.col-md-4
+				+post-boxed({
+					img: 'image-24-360x270',
+					subtitle: 'News',
+					title: 'How Drones Help The Environment',
+					date: 'September 16, 2020',
+					comments: '0'
+				})
+			.col-xs-6.col-md-4
+				+post-boxed({
+					img: 'image-15-360x270',
+					subtitle: 'News',
+					title: 'Top 5 Tips for Flying Drones Over Water',
+					date: 'September 16, 2020',
+					comments: '0'
+				})
+			.col-xs-6.col-md-4
+				+post-boxed({
+					img: 'image-25-360x270',
+					subtitle: 'News',
+					title: '10 Etiquette Tips for Operating a Drone',
+					date: 'September 16, 2020',
+					comments: '0'
+				})
+
+		// Pagination
+		+pag-light([
+			{start: true, actionClass: 'disabled pag-mobile-hide'},
+			{prev: true, actionClass: 'disabled'},
+			{value: '1', actionClass: 'active'},
+			{value: '2'},
+			{value: '3', actionClass: 'pag-mobile-hide'},
+			{value: '...', empty: true},
+			{value: '8'},
+			{next: true},
+			{end: true, actionClass: 'pag-mobile-hide'}
+		]).justify-content-center

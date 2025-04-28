@@ -1,0 +1,166 @@
+include ../post/_post
+include ../person/_person
+include ../quote/_quote
+include ../pag/_pag
+include ../comment/_comment
+
+// Blog post
+section.section.section-md.bg-transparent
+	.container
+		.row.row-30
+			.col-md-8.col-lg-9
+				.blog-post.mr-lg-3
+					.blog-post-item
+						.blog-post-subtitle.title-2 News
+						h1 Drone Review: How Good is the DJI Mavic Air 2?
+						.blog-post-meta.post-meta
+							.post-meta-item
+								+person-side-2({
+									img: 'person-07-64x64',
+									author: 'Adam Smith',
+									date: 'September 16, 2020'
+								})
+							.post-meta-item
+								.post-meta-icon.icon.onclinic-comment
+								.post-comment 0
+						.blog-post-divider
+						figure
+							+img( 'image-16-840x630' ).image
+							figcaption Working with the DJI Mavic Air 2
+						h2 1. Design
+						p Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.
+						p Sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.
+						p Diam maecenas sed enim ut. Sollicitudin tempor id eu nisl nunc. Nunc mattis enim ut tellus elementum. Aliquam ut porttitor leo a diam sollicitudin tempor id eu.
+						.row.row-text.row-20
+							.col-sm-6
+								figure
+									+img( 'image-15-400x300' ).image
+									figcaption The look of DJI’s new drone
+							.col-sm-6
+								figure
+									+img( 'image-26-400x300' ).image
+									figcaption Beach landscape (shot with the DJI Mavic Air 2)
+						h2 2. Performance
+						p Conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+						h3 2. 1. Flight
+						p Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+						ul.list.list-marked
+							li.list-item Magnis dis parturient montes nascetur
+							li.list-item
+								| Libero id faucibus nisl tincidunt eget
+								ul.list.list-marked
+									li.list-item Magnis dis parturient montes nascetur
+									li.list-item Magnis dis parturient montes nascetur
+							li.list-item Magnis dis parturient montes nascetur
+						p Feugiat in ante metus dictum at.
+						p Diam maecenas sed enim ut. Sollicitudin tempor id eu nisl nunc. Nunc mattis enim ut tellus elementum. Aliquam ut porttitor leo a diam sollicitudin tempor id eu. Dictum at tempor commodo ullamcorper a lacus vestibulum sed. Vitae congue eu consequat ac. In nisl nisi scelerisque eu. Pharetra massa massa ultricies mi quis.
+						h3 2. 2. Camera
+						p Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+						ul.list.list-ordered
+							li.list-item Lorem ipsum dolor sit amet conse ctetur adipisicing elit;
+							li.list-item
+								| Sed do eiusmod ut labore et dolore magna aliqua;
+								ul.list.list-ordered
+									li.list-item Quis nostrud exercitation ullamco laboris nisi ut aliquip;
+									li.list-item Duis aute irure dolor in reprehenderit;
+						h3 2. 3. Connection and Flight Time
+						p Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+						+quote-boxed({
+							iconClass: 'onclinic-quote',
+							quote: 'Diam maecenas sed enim sollicitudin tempor id eu nisl nunc. Nunc mattis enim ut tellus elementum.',
+							cite: 'Adam Smith'
+						})
+						p Sollicitudin tempor id eu nisl nunc. Nunc mattis enim ut tellus elementum. Aliquam ut porttitor leo a diam sollicitudin tempor id eu.
+						.tag-container
+							.tag-container
+								a.tag.tag-light( href='#' ) News
+								a.tag.tag-light( href='#' ) Drones
+								a.tag.tag-light( href='#' ) Review
+
+					.blog-post-item
+						+pag-extended({
+							prevImg: 'image-27-100x76',
+							prevTitle: 'How Drones Help The Environment',
+							nextImg: 'image-28-100x76',
+							nextTitle: 'Top 5 Tips for Flying Drones Over Water'
+						})
+
+					.blog-post-item
+						+person-post({
+							img: 'person-07-100x100',
+							subtitle: 'About Author',
+							title: 'Adam Smith',
+							text: 'Conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.'
+						})
+
+					.blog-post-item
+						h3 Recent Post
+						.row.row-40.row-content
+							.col-xs-6
+								+post-boxed({
+									img: 'image-06-360x270',
+									subtitle: 'News',
+									title: 'Top 8 DJI Osmo Action Accessories',
+									date: 'September 16, 2020',
+									comments: '0'
+								})
+							.col-xs-6
+								+post-boxed({
+									img: 'image-23-360x270',
+									subtitle: 'News',
+									title: 'Top 15 Aerial Photography Tips',
+									date: 'September 16, 2020',
+									comments: '0'
+								})
+
+					.blog-post-item
+						h3 3 Comments
+						+comment-clouds({
+							img: 'person-10-64x64',
+							author: 'Sam Peters',
+							date: 'September 16, 2020',
+							comment: 'Conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+						})
+							+comment-clouds({
+								img: 'person-07-64x64',
+								author: 'Adam Smith',
+								date: 'September 16, 2020',
+								comment: 'Ut enim ad minim veniam, quis nostrud exercitation.'
+							})
+						+comment-clouds({
+							img: 'person-06-64x64',
+							author: 'Jane Johnson',
+							date: 'September 16, 2020',
+							comment: 'Conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+						})
+
+					.blog-post-item
+						h3 Leave a Reply
+						form.rd-form
+							.row.row-20.align-items-center
+								.col-12
+									.rd-form-meta.small-1 Your email address will not be published. Required fields are marked *
+								.col-12
+									.form-group
+										label.form-label( for='contact-1-message' ) Comment
+										.form-control-wrap
+											textarea#contact-1-message.form-control.textarea-1( name='textarea', placeholder='Your comment', data-constraints='@Required' )
+								.col-md-6
+									.form-group
+										label.form-label( for='contact-1-name' ) * Full name
+										.form-control-wrap
+											input#contact-1-name.form-control( type='text', name='name', placeholder='e.g. Adam Smith', data-constraints='@Required' )
+								.col-md-6
+									.form-group
+										label.form-label( for='contact-1-email' ) * Email
+										.form-control-wrap
+											input#contact-1-email.form-control( type='email', name='email', placeholder='e.g. adamsmith@company.com', data-constraints='@Email @Required' )
+							.rd-form-btn.rd-form-btn-1
+								button.btn.btn-lg.btn-primary( type='submit' ) Submit
+
+
+			.col-md-4.col-lg-3
+				include ../widget/_widget-search
+				include ../widget/_widget-category
+				include ../widget/_widget-recent-post-1
+				include ../widget/_widget-meta

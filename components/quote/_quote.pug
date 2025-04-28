@@ -1,0 +1,44 @@
+//- Quote
+	@param {object} data - data object
+	@param {string} data.iconClass - class for icon
+	@param {string} data.quote - quote text
+	@param {string} data.cite - quote cite
+mixin quote( data )
+	// Quote
+	blockquote.quote&attributes( attributes )
+		.icon.quote-icon( class= data.iconClass )
+		q.quote-text.lead= data.quote
+		cite.quote-cite= data.cite
+
+
+//- Quote boxed
+	@param {object} data - data object
+	@param {string} data.iconClass - class for icon
+	@param {string} data.quote - quote text
+	@param {string} data.cite - quote cite
+mixin quote-boxed( data )
+	// Quote
+	blockquote.quote.quote-boxed&attributes( attributes )
+		.icon.quote-icon.icon( class= data.iconClass )
+		q.quote-text.h5= data.quote
+		cite.quote-cite= '— ' + data.cite
+
+//- Quote clouded
+	@param {object} data - data object
+	@param {string} data.iconClass - class for icon
+	@param {string} data.quote - quote text
+	@param {string} data.authorName - quote cite
+	@param {string} data.authorImg - quote author image
+	@param {string} data.authorMeta - quote authorMeta
+mixin quote-clouded( data )
+	// Quote
+	blockquote.quote.quote-clouded&attributes( attributes )
+		.quote-body
+			.quote-body-inner
+				.icon.quote-icon( class= data.iconClass )
+				q.quote-text= data.quote
+		.quote-author
+			+img( data.authorImg ).quote-author-img
+			.quote-author-body
+				.quote-author-name.h6: cite.quote-cite= data.authorName
+				.quote-author-meta= data.authorMeta

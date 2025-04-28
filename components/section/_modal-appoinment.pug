@@ -1,0 +1,37 @@
+// Modal appointment
+#appointment.modal.modal-book.fade.text-left(role='dialog')
+	.modal-dialog.modal-lg.modal-dialog-centered
+		// Modal content
+		.modal-content
+			.modal-header
+				h3.modal-title Request an Appointment
+				button.close(type='button', data-dismiss='modal'): span.icon.mdi-close
+			.modal-body
+				.box.box-book
+					.box-title.h5 Please confirm that you would like to request the following appointment:
+					.box-person
+						.box-person-title.h4 Richard Adams
+						.box-person-date
+							span.box-person-date-icon.onclinic-calendar
+							time.box-person-time(datetime="2020") June 30, 2020 at 5:00 pm – 7:00 pm
+					.box-title.h5
+						span= 'Your Information '
+						span.text-tertiaty= '*'
+					.box-subtitle Please enter your first name, last name and email address:
+					form.rd-form
+						.row.row-20.row-gutters-20.align-items-center
+							.col-md-6
+								.form-group
+									.form-control-wrap
+										input.form-control( type='text', name='first-name', placeholder='First Name...', data-constraints='@Required' )
+							.col-md-6
+								.form-group
+									.form-control-wrap
+										input.form-control( type='text', name='last-name', placeholder='Last Name...', data-constraints='@Required' )
+							.col-12
+								.form-group
+									.form-control-wrap
+										input.form-control( type='email', name='email', placeholder='Email address...', data-constraints='@Email @Required' )
+							.col-12.mt-1.mt-lg-3
+								.btn-group-1.text-left
+									button.btn.btn-lg.btn-primary( type='submit' ) Request an Appointment

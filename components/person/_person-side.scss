@@ -1,0 +1,36 @@
+// Base
+.person-side {
+	display: flex;
+	align-items: center;
+
+	.person-media {
+		flex-shrink: 0;
+		max-width: 35%;
+	}
+
+	.person-img {
+		border-radius: 50%;
+	}
+
+	.person-body {
+		flex-grow: 1;
+		padding-left: px-to-rem( 15px );
+	}
+
+	.person-meta {
+		color: inherit;
+	}
+
+	* + .person-meta { margin-top: px-to-rem( 7px ) }
+}
+
+// Media
+@include media-breakpoint-up( lg ) {
+	.person-side {
+		.person-body {
+			padding-left: px-to-rem( 20px );
+		}
+
+		* + .person-meta { margin-top: px-to-rem( 7px ) }
+	}
+}

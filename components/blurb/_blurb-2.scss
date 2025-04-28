@@ -1,0 +1,39 @@
+.blurb-2 {
+	.blurb-icon,
+	.blurb-number {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: px-to-rem( 50px );
+		height: px-to-rem( 50px );
+		border-radius: 50%;
+		color: $white;
+		background-color: $primary;
+	}
+
+	* + .blurb-title { margin-top: px-to-rem( 40px * $xs-multiplier ) }
+	* + .blurb-text { margin-top: px-to-rem( 21px * $xs-multiplier ) }
+	.blurb-icons-wrap + .blurb-text { margin-top: px-to-rem( 40px * $xs-multiplier ) }
+}
+
+@include media-breakpoint-up( lg ) {
+	.blurb-2 {
+		.blurb-icon,
+		.blurb-number {
+			width: px-to-rem( 64px );
+			height: px-to-rem( 64px );
+		}
+
+		* + .blurb-title { margin-top: px-to-rem( 40px * $lg-multiplier ) }
+		* + .blurb-text { margin-top: px-to-rem( 21px * $lg-multiplier ) }
+		.blurb-icons-wrap + .blurb-text { margin-top: px-to-rem( 40px * $lg-multiplier ) }
+	}
+}
+
+@include media-breakpoint-up( xxl ) {
+	.blurb-2 {
+		* + .blurb-title { margin-top: px-to-rem( 40px ) }
+		* + .blurb-text { margin-top: px-to-rem( 21px ) }
+		.blurb-icons-wrap + .blurb-text { margin-top: px-to-rem( 40px ) }
+	}
+}

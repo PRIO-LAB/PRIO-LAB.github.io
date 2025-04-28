@@ -1,0 +1,49 @@
+include ../blurb/_blurb
+
+// About us tabs
+section.section.section-md.bg-transparent
+	.container.tab
+		ul.nav.nav-line.justify-content-center( role='tablist' )
+			li.nav-item: a.nav-link.h6.active( data-toggle='tab', href='#navLine3-1', role='tab', aria-selected='true' ) Who are we
+			li.nav-item: a.nav-link.h6( data-toggle='tab', href='#navLine3-2', role='tab', aria-selected='false' ) Advantages
+		.tab-content
+			#navLine3-1.tab-pane.fade.show.active( role='tabpanel' )
+				.row.row-20.row-lg-40.flex-sm-row-reverse
+					.col-md-6.ml-auto
+						.title-1 About us
+						h2
+							| We help you
+							br.d-none.d-xl-inline
+							| embrace the future
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+						p Ut etiam sit amet nisl purus. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Aliquet lectus proin nibh nisl condimentum id venenatis a condimentum.
+						.btn-group-1
+							a.btn.btn-lg( href='contacts.html' ) Get in touch
+					.col-md-5.d-none.d-md-block
+						+img( 'image-03-460x495.png' ).image
+
+			#navLine3-2.tab-pane.fade( role='tabpanel' )
+				.row.row-30
+					.col-md-6
+						.title-1 Why Choose Us
+						h2
+							| We provide top-notch
+							br.d-none.d-xl-inline
+							| drones & service
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+						p Ut etiam sit amet nisl purus. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Aliquet lectus proin nibh nisl condimentum id venenatis a condimentum.
+						.btn-group-1
+							a.btn.btn-lg( href='contacts.html' ) Get in touch
+					.col-md-6
+						+blurb-simple({
+							iconClass: 'onclinic-check',
+							title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam purus aliquam elementum.'
+						})
+						+blurb-simple({
+							iconClass: 'onclinic-check',
+							title: 'Malesuada odio sed id faucibus natoque ut laoreet condimentum. Eu sagittis hac gravida.'
+						})
+						+blurb-simple({
+							iconClass: 'onclinic-check',
+							title: 'Aliquam bibendum mauris consequat sit mi velit malesuada dui. Bibendum massa nec aliquam.'
+						})

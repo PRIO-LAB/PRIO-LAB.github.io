@@ -1,0 +1,92 @@
+-
+	var
+		logo = {
+			default: 'logo-default-182x59.svg',
+			inverse: 'logo-inverse-182x59.svg',
+			name: 'Dronix'
+		},
+
+		color = {
+			dark: '#121f4b',
+			light: '#e0f3fd'
+		},
+
+		menu = {
+			type: 'root',
+			child: [
+				{
+					title: 'Home',
+					link: 'index.html',
+					home: true
+				},
+
+				{
+					title: 'About us'
+				},
+
+				{
+					title: 'Purposes',
+					child: {
+						type: 'dropdown',
+						child: [
+							{ title: 'Single Purpose' }
+						]
+					}
+				},
+
+				{
+					title: 'Showcase'
+				},
+
+				{
+					title: 'Pages',
+					link: '#',
+					child: {
+						type: 'dropdown',
+						child: [
+							{ title: 'Book an Appointment' },
+							{ title: 'Gallery' },
+							{ title: 'Pricing' },
+							{ title: 'Contacts' },
+							{ title: 'FAQs' },
+							{ title: '404 Page' },
+							{ title: 'Terms of Use' },
+							{ title: 'Privacy Policy' }
+						]
+					}
+				},
+
+				{
+					title: 'Blog',
+					link: '#',
+					child: {
+						type: 'dropdown',
+						child: [
+							{ title: 'Grid Blog' },
+							{ title: 'Single Post' }
+						]
+					}
+				},
+
+				{
+					title: 'Store',
+					link: '#',
+					child: {
+						type: 'dropdown',
+						child: [
+							{ title: 'Single Product' },
+							{ title: 'Store Catalog' },
+							{ title: 'Cart' }
+						]
+					}
+				}
+			]
+		},
+
+		homePage,
+		pageName,
+		pageId,
+		pageClass,
+		pageImage,
+		htmlClass,
+		breadcrumbs = [];

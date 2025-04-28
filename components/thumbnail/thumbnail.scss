@@ -1,0 +1,36 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+// Thumbnail
+.thumbnail-img {
+	width: 100%;
+}
+
+.thumbnail-link {
+	display: inline-block;
+}
+
+* + .thumbnail-title { margin-top: px-to-rem( 39px * $xs-multiplier ) }
+* + .thumbnail-text { margin-top: px-to-rem( 21px * $xs-multiplier ) }
+* + .thumbnail-link { margin-top: px-to-rem( 12px ) }
+
+
+// Media
+@include media-breakpoint-up( lg ) {
+	* + .thumbnail-title { margin-top: px-to-rem( 39px * $lg-multiplier ) }
+	* + .thumbnail-text { margin-top: px-to-rem( 21px * $lg-multiplier ) }
+}
+
+@include media-breakpoint-up( xxl ) {
+	* + .thumbnail-title { margin-top: px-to-rem( 39px ) }
+	* + .thumbnail-text { margin-top: px-to-rem( 21px ) }
+}
+
+
+// Layouts
+@import "thumbnail-banner";
+@import "thumbnail-video";

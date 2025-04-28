@@ -1,0 +1,15 @@
+extends ../components/base/_skeleton
+include ../components/rd-navbar/_rd-navbar-transparent
+include ../components/breadcrumb/_breadcrumb
+include ../components/base/_svg-elements
+
+block variables
+	- pageName = 'Single Product';
+
+block page
+	+rd-navbar
+	+breadcrumb-section
+	include ../components/section/_single-product
+	include ../components/section/_single-product-review
+	include ../components/section/_product-carousel-bg-light
+	include ../components/footer/_footer-default

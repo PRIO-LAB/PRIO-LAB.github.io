@@ -1,0 +1,173 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+
+// Variables
+$table-cell-padding: px-to-rem( 20px, 32px );
+$table-head-padding: px-to-rem( 21px, 28px, 15px );
+$table-cell-padding-sm: px-to-rem( 10px, 32px );
+$table-striped-order: even;
+$table-accent-bg: $gray-200;
+
+$table-head-bg: $gray-200;
+
+@import "../bootstrap/scss/mixins";
+@import "../bootstrap/scss/tables";
+
+
+// Base
+.table {
+	margin-bottom: 0;
+
+	thead th {
+		min-width: 110px;
+		padding: $table-head-padding;
+		font-size: $font-size-base;
+		font-weight: $font-weight-base;
+		background-color: $table-head-bg;
+		border-color: $table-head-bg;
+	}
+
+	tfoot {
+		tr {
+			font-weight: 700;
+			border-bottom: $table-border-width solid $table-border-color;
+		}
+	}
+}
+
+
+// Modifying
+.table-md {
+	td {
+		padding: px-to-rem( 24px, 30px );
+	}
+}
+
+.table-striped {
+	tfoot tr {
+		border-top: $table-border-width solid $table-accent-bg;
+	}
+}
+
+.table-head-primary {
+	thead th {
+		background-color: $primary;
+		color: $white;
+	}
+}
+
+.table-align-middle {
+	td {
+		vertical-align: middle;
+	}
+}
+
+.table-1 {
+	tr {
+		&:last-child { border-bottom: 1px solid $border-color }
+	}
+
+	td {
+		padding: px-to-rem( 40px, 9px );
+		vertical-align: middle;
+
+		&:first-child { padding-left: 0; }
+		&:last-child { padding-left: 0; }
+	}
+}
+
+// Table separate
+.table-separate {
+	th,
+	td {
+		&:not(:first-child) {
+			border-left: 5px solid $white;
+		}
+	}
+
+	thead {
+		th {
+			padding: px-to-rem( 15px, 15px );
+			font-size: $h6-font-size;
+			text-transform: uppercase;
+			font-weight: 500;
+			color: $white;
+			background-color: $primary-light;
+		}
+	}
+
+	td {
+		padding: px-to-rem( 12px, 15px );
+		background-color: $gray-200;
+		border-top: 5px solid $white;
+		transition: $transition-base;
+	}
+
+	tr:hover {
+		td {
+			background-color: $gray-400;
+		}
+	}
+}
+
+.table-separate-2 {
+	th,
+	td {
+		&:not(:first-child) {
+			border-left: 5px solid $white;
+		}
+	}
+
+	td {
+		padding: px-to-rem( 20px, 15px );
+		background-color: $gray-100;
+		border-top: 5px solid $white;
+		transition: $transition-base;
+
+		&:last-child {
+			background-color: $primary-light;
+		}
+	}
+
+	tr:hover {
+		td {
+			background-color: $gray-400;
+
+			&:last-child {
+				background-color: $primary-light;
+			}
+		}
+	}
+}
+
+* + .table-container { margin-top: px-to-rem( 55px * $xs-multiplier ) }
+h3 + .table-container { margin-top: px-to-rem( 26px * $xs-multiplier ) }
+
+// Media
+@include media-breakpoint-up( lg ) {
+	.table-separate {
+		thead {
+			th { padding: px-to-rem( 15px, 30px ); }
+		}
+
+		td { padding: px-to-rem( 12px, 30px ); }
+	}
+
+	.table-separate-2 {
+		td { padding: px-to-rem( 27px * $lg-multiplier, 31px * $lg-multiplier ); }
+	}
+
+	* + .table-container { margin-top: px-to-rem( 55px * $lg-multiplier ) }
+	h3 + .table-container { margin-top: px-to-rem( 26px * $lg-multiplier ) }
+}
+
+@include media-breakpoint-up( xxl ) {
+	.table-separate-2 {
+		td { padding: px-to-rem( 27px, 31px ); }
+	}
+
+	* + .table-container { margin-top: px-to-rem( 55px ) }
+	h3 + .table-container { margin-top: px-to-rem( 26px ) }
+}

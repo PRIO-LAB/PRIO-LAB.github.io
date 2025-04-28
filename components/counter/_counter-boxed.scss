@@ -1,0 +1,28 @@
+// Base
+.counter-boxed {
+	border: 1px solid $border-color;
+	padding: px-to-rem( 58px * $xs-multiplier, 40px * $xs-multiplier );
+	border-radius: px-to-rem( 15px );
+
+	.counter-value {
+		font-size: px-to-rem( 70px * $xs-multiplier );
+	}
+
+	* + .counter-title { margin-top: px-to-rem( 3px ) }
+}
+
+.counter-boxed-light {
+	background-color: $gray-200;
+	border-color: $gray-200;
+}
+
+// Media
+@include media-breakpoint-up( xxl ) {
+	.counter-boxed {
+		padding: px-to-rem( 58px, 30px, 68px );
+
+		.counter-value {
+			font-size: px-to-rem( 60px );
+		}
+	}
+}

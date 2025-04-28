@@ -1,0 +1,34 @@
+include ../blurb/_blurb
+
+// About us 2
+section.section.section-md.bg-transparent
+	.container
+		.row.row-30.row-lg-40.flex-sm-row-reverse.justify-content-between
+			.col-md-6
+				+img( 'product-01-596x515.png' ).image
+
+			.col-md-6
+				.title-1 What We Offer
+				h2 DJI Mavic 2 Pro
+				p A drone that embodies all of DJI's advanced, signature technologies, and redefines aerial photography.
+				.row.row-20.row-text-2
+					.col-4
+						+blurb-micro({
+							iconClass: 'linearicons-wifi-low2',
+							value: '5 ml',
+							title: 'Transmission Distance'
+						})
+					.col-4
+						+blurb-micro({
+							iconClass: 'linearicons-clock3',
+							value: '31 min',
+							title: 'Maximal <br>Flight time'
+						})
+					.col-4
+						+blurb-micro({
+							iconClass: 'linearicons-camera',
+							value: '12 mp',
+							title: 'Effective <br>Pixels'
+						})
+				.btn-group-1
+					a.btn.btn-lg.btn-primary( href='contacts.html' ) Shop Contacts

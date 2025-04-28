@@ -1,0 +1,76 @@
+.blurb-boxed-simple {
+	width: 100%;
+	padding: px-to-rem( 30px, 15px );
+	text-align: center;
+	border: 1px solid $border-color;
+	transition: $transition-base;
+
+	.blurb-item {
+		@include group( px-to-rem( 15px ), px-to-rem( 20px ) );
+	}
+
+	.blurb-icon {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		font-size: px-to-rem( 40px );
+		color: $primary;
+	}
+
+	.blurb-title {
+		transition: $transition-base;
+	}
+
+	&:hover {
+		color: $body-color;
+		box-shadow: $box-shadow;
+		transform: translateY( -10px );
+
+		.blurb-title {
+			color: $primary;
+		}
+	}
+
+	* + .blurb-title { margin-top: 0 }
+}
+
+* + .blurb-boxed-simple { margin-top: px-to-rem( 27px * $lg-multiplier ) }
+
+
+// Media
+@include media-breakpoint-up( sm ) {
+	.blurb-boxed-simple {
+		display: flex;
+		text-align: left;
+
+		.blurb-item {
+			display: flex;
+			align-items: center;
+		}
+	}
+}
+
+@include media-breakpoint-up( lg ) {
+	.blurb-boxed-simple {
+		padding: px-to-rem( 27px * $lg-multiplier, 40px * $lg-multiplier );
+
+		.blurb-item {
+			@include groupX( px-to-rem( 28px ) );
+		}
+
+		.blurb-icon {
+			font-size: px-to-rem( 50px );
+		}
+	}
+
+	* + .blurb-boxed-simple { margin-top: px-to-rem( 27px * $lg-multiplier ) }
+}
+
+@include media-breakpoint-up( xxl ) {
+	.blurb-boxed-simple {
+		padding: px-to-rem( 27px, 30px, 27px, 40px );
+	}
+
+	* + .blurb-boxed-simple { margin-top: px-to-rem( 27px ) }
+}

@@ -1,0 +1,120 @@
+// Base
+.quote-clouded {
+	@include quote-author-side;
+
+	.quote-author-img {
+		border-radius: 50%;
+	}
+
+	.quote-author-meta {
+		font-size: $font-size-sm;
+	}
+
+	.quote-body {
+		background-color: $white;
+		@include cloud-item( 18px );
+
+		&::before {
+			left: px-to-rem( 90px );
+			transform: translate( -50%, -48% ) skewY( -45deg );
+		}
+	}
+
+	.quote-body-inner {
+		position: relative;
+		padding: px-to-rem( 51px, 15px, 30px );
+	}
+
+	.quote-icon {
+		position: absolute;
+		left: px-to-rem( 15px );
+		top: px-to-rem( 20px );
+		font-size: px-to-rem( 24px );
+	}
+
+	* + .quote-text { margin-top: 0 }
+}
+
+
+// Media
+@include media-breakpoint-up( md ) {
+	.quote-clouded {
+		.quote-body {
+			@include flex-min-height( px-to-rem( 200px ), '.quote-body-inner' );
+		}
+
+		.quote-body-inner {
+			padding: px-to-rem( 70px * $xs-multiplier, 40px * $xs-multiplier, 80px * $xs-multiplier );
+		}
+
+		.quote-icon {
+			left: px-to-rem( 40px * $xs-multiplier );
+			top: px-to-rem( 42px * $xs-multiplier );
+		}
+
+		.quote-author {
+			padding-left: px-to-rem( 37px * $xs-multiplier );
+		}
+
+		* + .quote-text { margin-top: px-to-rem( 16px * $xs-multiplier ) }
+		* + .quote-author { margin-top: px-to-rem( 28px * $xs-multiplier ) }
+		* + .quote-author-meta { margin-top: px-to-rem( 6px * $xs-multiplier ) }
+	}
+}
+
+@include media-breakpoint-up( lg ) {
+	.quote-clouded {
+		.quote-body {
+			.quote-body-inner {
+				min-height: px-to-rem( 260px * $lg-multiplier );
+				padding: px-to-rem( 70px * $lg-multiplier, 40px * $lg-multiplier, 80px * $lg-multiplier );
+			}
+		}
+
+		.quote-icon {
+			left: px-to-rem( 40px * $lg-multiplier );
+			top: px-to-rem( 42px * $lg-multiplier );
+		}
+
+		.quote-author {
+			padding-left: px-to-rem( 37px * $lg-multiplier );
+		}
+
+		* + .quote-text { margin-top: px-to-rem( 16px * $lg-multiplier ) }
+		* + .quote-author { margin-top: px-to-rem( 28px * $lg-multiplier ) }
+		* + .quote-author-meta { margin-top: px-to-rem( 6px * $lg-multiplier ) }
+	}
+}
+
+@include media-breakpoint-up( xl ) {
+	.quote-clouded {
+		.quote-body {
+			.quote-body-inner {
+				min-height: px-to-rem( 260px );
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up( xxl ) {
+	.quote-clouded {
+		.quote-body {
+			.quote-body-inner {
+				padding: px-to-rem( 70px, 40px, 80px );
+			}
+		}
+
+		.quote-icon {
+			left: px-to-rem( 40px );
+			top: px-to-rem( 42px );
+		}
+
+		.quote-author {
+			padding-left: px-to-rem( 37px );
+		}
+
+		* + .quote-text { margin-top: px-to-rem( 16px ) }
+		* + .quote-author { margin-top: px-to-rem( 28px ) }
+		* + .quote-author-meta { margin-top: px-to-rem( 6px ) }
+	}
+}

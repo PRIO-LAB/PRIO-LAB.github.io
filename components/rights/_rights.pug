@@ -1,0 +1,21 @@
+//- Copyright
+mixin rights
+	// Copyright
+	p.rights&attributes( attributes )
+		span Copyright &copy; 2020&nbsp;
+		span= logo.name
+		span .
+		a.ml-2.ml-md-4( href='privacy-policy.html' ) Privacy Policy
+		a.ml-2.ml-md-4( href='terms-of-use.html' ) Terms of Use
+
+//- Copyright
+mixin rights-2
+	// Copyright
+	.rights.rights-2&attributes( attributes )
+		div
+			span Copyright &copy; 2020&nbsp;
+			span= logo.name
+			span .
+		div
+			a.rights-link-offset( href='privacy-policy.html' ) Privacy Policy
+			a.rights-link-offset( href='terms-of-use.html' ) Terms of Use

@@ -1,0 +1,65 @@
+.blurb-simple {
+	padding-bottom: 1px;
+	text-align: center;
+
+	.blurb-item {
+		@include group( px-to-rem( 10px ) );
+	}
+
+	.blurb-icon {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		width: px-to-rem( 64px );
+		height: px-to-rem( 64px );
+		font-size: px-to-rem( 14px );
+		color: $gray-800;
+		background-color: $white;
+		border-radius: 50%;
+	}
+
+	* + .blurb-title { margin-top: 0 }
+	* + .blurb-body { margin-top: px-to-rem( 12px ) }
+}
+
+* + .blurb-simple { margin-top: px-to-rem( 27px * $lg-multiplier ) }
+
+
+// Context bg-transparent
+.bg-transparent {
+	.blurb-simple {
+		.blurb-icon {
+			background-color: $gray-200;
+		}
+	}
+}
+
+
+// Media
+@include media-breakpoint-up( sm ) {
+	.blurb-simple {
+		text-align: left;
+
+		.blurb-item {
+			display: flex;
+			align-items: center;
+		}
+	}
+}
+
+@include media-breakpoint-up( lg ) {
+	.blurb-simple {
+		.blurb-item {
+			@include groupX( px-to-rem( 20px ) );
+		}
+
+		* + .blurb-body { margin-top: px-to-rem( 18px ) }
+	}
+
+	* + .blurb-simple { margin-top: px-to-rem( 27px * $lg-multiplier ) }
+}
+
+@include media-breakpoint-up( xxl ) {
+	* + .blurb-simple { margin-top: px-to-rem( 27px ) }
+}

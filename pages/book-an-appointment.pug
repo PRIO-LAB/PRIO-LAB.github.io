@@ -1,0 +1,15 @@
+extends ../components/base/_skeleton
+include ../components/rd-navbar/_rd-navbar-transparent
+include ../components/breadcrumb/_breadcrumb
+
+block variables
+	- pageName = 'Book an appointment';
+
+block page
+	+rd-navbar
+	+breadcrumb-section
+	include ../components/section/_booking-calendar
+	include ../components/footer/_footer-default
+
+block modal
+	include ../components/section/_modal-appoinment

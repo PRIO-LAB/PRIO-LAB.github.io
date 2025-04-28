@@ -1,0 +1,58 @@
+// Base
+.product-simple {
+	.product-body {
+		padding: px-to-rem( 40px * $lg-multiplier, 30px * $lg-multiplier, 35px * $lg-multiplier );
+		text-align: center;
+		background-color: $primary-light;
+		transition: $transition-base;
+	}
+
+	.product-title {
+		transition: $transition-base;
+	}
+
+	.product-link {
+		font-weight: 600;
+		color: $secondary;
+
+		&:hover {
+			color: $white;
+		}
+	}
+
+	&:hover {
+		.product-body {
+			color: $white;
+			background-color: $gray-800;
+		}
+
+		.product-title {
+			color: $white;
+		}
+
+		.product-link {
+			color: $primary-light;
+
+			&:hover {
+				color: $white;
+			}
+		}
+	}
+}
+
+// Media
+@include media-breakpoint-up( lg ) {
+	.product-simple {
+		.product-body {
+			padding: px-to-rem( 40px * $lg-multiplier, 30px * $lg-multiplier, 35px * $lg-multiplier );
+		}
+	}
+}
+
+@include media-breakpoint-up( xxl ) {
+	.product-simple {
+		.product-body {
+			padding: px-to-rem( 40px, 30px, 35px );
+		}
+	}
+}

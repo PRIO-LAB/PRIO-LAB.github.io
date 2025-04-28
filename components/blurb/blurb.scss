@@ -1,0 +1,34 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+
+// Base
+.blurb-icon {
+	font-size: px-to-rem( 20px );
+	color: $primary;
+}
+
+.blurb-link-overlay {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+}
+
+
+// Spacing
+* + .blurb-title { margin-top: px-to-rem( 12px ) }
+* + .blurb-text { margin-top: px-to-rem( 8px ) }
+
+
+// Layouts
+@import 'blurb-2';
+@import 'blurb-boxed-simple';
+@import 'blurb-simple';
+@import 'blurb-micro';

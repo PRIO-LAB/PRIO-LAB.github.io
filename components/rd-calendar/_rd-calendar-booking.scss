@@ -1,0 +1,264 @@
+.rd-booking-calendar {
+	// Panel
+	.rdc-panel {
+		justify-content: space-around;
+	}
+
+	.rdc-next,
+	.rdc-prev {
+		font-size: px-to-rem( 20px );
+	}
+
+	// Table
+	.rdc-table {
+		position: relative;
+
+		> table {
+			table-layout: fixed;
+		}
+	}
+	// Weeks
+	.rdc-table_day {
+		padding: px-to-rem( 10px, 3px );
+		font-weight: $font-weight-base;
+		font-size: px-to-rem( 12px );
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		background-color: $gray-200;
+		border: 5px solid $white;
+	}
+
+	// Days
+	.rdc-table_date {
+		padding: px-to-rem( 10px, 5px );
+		font-weight: $headings-font-weight;
+		background-color: $gray-100;
+		border: 2px solid $white;
+	}
+
+	.rdc-table_today {
+		color: $white;
+		background-color: $dark;
+	}
+
+	.rdc-table_has-events {
+		.rdc-table_date {
+			background-color: $primary-light;
+		}
+
+		.rdc-table_today {
+			background-color: $dark;
+		}
+
+		.rdc-table_date,
+		.rdc-table_today {
+			&:hover {
+				color: $white;
+				background-color: $primary;
+			}
+		}
+	}
+
+	// Days of next/prev months
+	.rdc-table_next,
+	.rdc-table_prev {
+		opacity: 0;
+		pointer-events: none !important;
+	}
+
+	// Events
+	.rdc-table_events {
+		display: block;
+	}
+
+	.rdc-table_has-events {
+		.rdc-table_events {
+			display: none;
+			position: absolute;
+			left: 0;
+			width: 100%;
+		}
+	}
+
+	.rdc-table_event {
+		padding: px-to-rem( 10px, 5px );
+	}
+
+	// Event table
+	.rdc-event-booking-table {
+		text-align: left;
+
+		thead {
+			th {
+				padding: px-to-rem( 15px, 10px );
+				background-color: transparent;
+				border: none;
+
+				&:first-child { padding-left: 0; }
+				&:last-child { padding-right: 0; }
+			}
+		}
+
+		td {
+			display: block;
+			padding: px-to-rem( 20px, 10px );
+			text-align: left;
+			vertical-align: middle;
+		}
+	}
+
+	* + .rdc-input { margin-top: px-to-rem( 20px * $xs-multiplier ) }
+	* + .rdc-table { margin-top: px-to-rem( 35px * $xs-multiplier ) }
+}
+
+* + .rd-booking-calendar { margin-top: px-to-rem( 27px * $xs-multiplier ) }
+
+
+// Media
+@include media-breakpoint-down( sm ) {
+	.rd-booking-calendar {
+		// Event table
+		.rdc-event-booking-table {
+			tr {
+				> td + td {
+					padding-top: 0;
+					border-top: none;
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up( md ) {
+	.rd-booking-calendar {
+		// Event table
+		.rdc-event-booking-table {
+			td {
+				display: table-cell;
+
+				&:first-child { padding-left: 0; }
+				&:last-child { padding-right: 0; }
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up( lg ) {
+	.rd-booking-calendar {
+		// Panel
+		.rdc-next,
+		.rdc-prev {
+			font-size: px-to-rem( 25px );
+		}
+
+		// Weeks
+		.rdc-table_day {
+			padding: px-to-rem( 15px * $lg-multiplier, 10px * $lg-multiplier );
+			font-size: $h6-font-size;
+		}
+
+		// Days
+		.rdc-table_date {
+			padding: px-to-rem( 36px * $lg-multiplier, 10px * $lg-multiplier );
+			font-size: $font-size-lg;
+		}
+
+		// Events
+		.rdc-table_event {
+			padding: px-to-rem( 24px * $lg-multiplier, 40px * $lg-multiplier, 34px * $lg-multiplier );
+		}
+
+		.rdc-table_has-events {
+			.rdc-table_date {
+				position: relative;
+
+				&::before {
+					position: absolute;
+					bottom: 77%;
+					left: 50%;
+					transform: translateX(-50%);
+					content: "2 Available";
+					display: inline-block;
+					padding: px-to-rem( 6px, 10px );
+					background-color: #fff;
+					font-size: px-to-rem( 14px );
+					color: $body-color;
+					box-shadow: $box-shadow-sm;
+					opacity: 0;
+					white-space: nowrap;
+					transition: $transition-base;
+				}
+
+				&:hover {
+					&::before {
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+		// Event table
+		.rdc-event-booking-table {
+			thead {
+				th {
+					padding: px-to-rem( 31px * $lg-multiplier, 10px * $lg-multiplier );
+				}
+			}
+
+			td {
+				padding: px-to-rem( 30px * $lg-multiplier, 10px * $lg-multiplier );
+			}
+		}
+
+		* + .rdc-input { margin-top: px-to-rem( 20px * $lg-multiplier ) }
+		* + .rdc-table { margin-top: px-to-rem( 35px * $lg-multiplier ) }
+	}
+
+	* + .rd-booking-calendar { margin-top: px-to-rem( 27px * $lg-multiplier ) }
+}
+
+@include media-breakpoint-up( xxl ) {
+	.rd-booking-calendar {
+		// Panel
+		.rdc-next,
+		.rdc-prev {
+			font-size: px-to-rem( 32px );
+		}
+
+		// Weeks
+		.rdc-table_day {
+			padding: px-to-rem( 15px, 10px );
+			font-size: $h6-font-size;
+		}
+
+		// Days
+		.rdc-table_date {
+			padding: px-to-rem( 36px, 10px );
+			font-size: $font-size-lg;
+		}
+
+		// Events
+		.rdc-table_event {
+			padding: px-to-rem( 24px, 40px, 34px );
+		}
+
+		// Event table
+		.rdc-event-booking-table {
+			thead {
+				th {
+					padding: px-to-rem( 31px, 10px );
+				}
+			}
+
+			td {
+				padding: px-to-rem( 30px, 10px );
+			}
+		}
+
+		* + .rdc-input { margin-top: px-to-rem( 20px ) }
+		* + .rdc-table { margin-top: px-to-rem( 35px ) }
+	}
+
+	* + .rd-booking-calendar { margin-top: px-to-rem( 27px ) }
+}

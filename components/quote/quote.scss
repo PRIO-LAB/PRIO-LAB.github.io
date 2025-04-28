@@ -1,0 +1,54 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+// Mixins
+// Quote author side
+@mixin quote-author-side {
+	.quote-author {
+		display: flex;
+		align-items: center;
+
+		.quote-author-img {
+			flex-shrink: 0;
+			max-width: 40%;
+		}
+
+		.quote-author-body {
+			padding-top: 0;
+			padding-left: px-to-rem( 15px );
+		}
+	}
+}
+
+
+// Base
+.quote {
+	position: relative;
+
+	q, cite {
+		display: block;
+	}
+}
+
+.quote-cite {
+	font-weight: 500;
+}
+
+.quote-icon {
+	font-size: $font-size-base * 2;
+	color: $primary;
+}
+
+* + .quote-text { margin-top: px-to-rem( 12px ) }
+* + .quote-cite { margin-top: px-to-rem( 10px ) }
+
+
+// Layouts
+@import "quote-boxed";
+@import "quote-3";
+@import "quote-4";
+@import "quote-clouded";

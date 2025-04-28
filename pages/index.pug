@@ -1,0 +1,18 @@
+extends ../components/base/_skeleton
+include ../components/rd-navbar/_rd-navbar-transparent-absolute
+
+block variables
+	- pageName = 'Home';
+
+block page
+	section.section( style='position:relative' )
+		+rd-navbar
+		include ../components/section/_swiper-primary
+	include ../components/section/_blurb-boxed-simple
+	include ../components/section/_about-us-1
+	include ../components/section/_about-us-5
+	include ../components/section/_thumbnail-video-carousel
+	include ../components/section/_about-us-2
+	include ../components/section/_product-carousel
+	include ../components/section/_contact-us-1
+	include ../components/footer/_footer-default

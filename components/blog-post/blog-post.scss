@@ -1,0 +1,48 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+
+
+// Base
+.blog-post-subtitle {
+	letter-spacing: .05em;
+	color: $secondary;
+}
+
+.blog-post-divider {
+	border-top: 1px solid $border-color;
+}
+
+.blog-post {
+	.blog-post-meta {
+		flex-wrap: nowrap;
+		justify-content: space-between;
+	}
+
+	* + .blog-post-item { margin-top: px-to-rem( 121px * $xs-multiplier ) }
+	* + .blog-post-meta { margin-top: px-to-rem( 30px * $xs-multiplier ) }
+	* + .blog-post-divider { margin-top: px-to-rem( 40px * $xs-multiplier ) }
+	.blog-post-divider + * { margin-top: px-to-rem( 60px * $xs-multiplier ) }
+}
+
+
+// Media
+@include media-breakpoint-up( lg ) {
+	.blog-post {
+		* + .blog-post-item { margin-top: px-to-rem( 121px * $lg-multiplier ) }
+		* + .blog-post-meta { margin-top: px-to-rem( 31px * $lg-multiplier ) }
+		* + .blog-post-divider { margin-top: px-to-rem( 20px * $lg-multiplier ) }
+		.blog-post-divider + * { margin-top: px-to-rem( 50px * $lg-multiplier ) }
+	}
+}
+
+@include media-breakpoint-up( xxl ) {
+	.blog-post {
+		* + .blog-post-item { margin-top: px-to-rem( 121px ) }
+		* + .blog-post-meta { margin-top: px-to-rem( 31px ) }
+		* + .blog-post-divider { margin-top: px-to-rem( 20px ) }
+		.blog-post-divider + * { margin-top: px-to-rem( 50px ) }
+	}
+}

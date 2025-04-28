@@ -1,0 +1,56 @@
+//- Pagination light
+	@param {array} data - pagination data array
+	@param {object} item - single item object
+	@param {string} item.value - item value
+	@param {string} [item.prev] - set prev button to pagination
+	@param {string} [item.next] - set next button to pagination
+	@param {string} [item.actionClass] - add action class to item
+mixin pag-light( data )
+	ul.pag.pag-light&attributes( attributes )
+		each item in data
+			li.pag-item( class= item.actionClass )
+				if ( item.start )
+					a.pag-link.pag-link-start( href='#' )
+						span.pag-icon.mdi-chevron-double-left.novi-icon
+						span First
+				else if ( item.prev )
+					a.pag-link.pag-link-prev( href='#' )
+						span.pag-icon.mdi-chevron-left.novi-icon
+						span Prev
+				else if ( item.next )
+					a.pag-link.pag-link-next( href='#' )
+						span Next
+						span.pag-icon.mdi-chevron-right.novi-icon
+				else if ( item.end )
+					a.pag-link.pag-link-end( href='#' )
+						span Last
+						span.pag-icon.mdi-chevron-double-right.novi-icon
+				else if ( item.empty )
+					span.inactive.pag-link( class= ( item.class ? item.class : '' ) )= item.value
+				else
+					a.pag-link( class= ( item.class ? item.class : '' ), href='#' )= item.value
+
+//- Pagination extended
+	@param {array} data - pagination data array
+	@param {object} item - single item object
+mixin pag-extended( data )
+	.pag.pag-extended
+		.pag-extended-item
+			.pag-extended-item-inner
+				.pag-extended-media
+					+img( data.prevImg ).pag-extended-img
+				.pag-extended-body
+					.pag-extended-title= data.prevTitle
+					a.link.pag-extended-link( href='#' )
+						span.mdi-chevron-left
+						span= ' Previous post'
+
+		.pag-extended-item.pag-extended-item-reverse
+			.pag-extended-item-inner
+				.pag-extended-media
+					+img( data.nextImg ).pag-extended-img
+				.pag-extended-body
+					.pag-extended-title= data.nextTitle
+					a.link.pag-extended-link( href='#' )
+						span= 'Next post '
+						span.mdi-chevron-right

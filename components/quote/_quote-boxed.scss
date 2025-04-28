@@ -1,0 +1,44 @@
+// Base
+.quote-boxed {
+	padding: px-to-rem( 30px, 15px );
+	text-align: center;
+	background-color: $gray-400;
+
+	.quote-icon {
+		font-size: px-to-rem( 24px );
+	}
+
+	.quote-cite {
+		font-size: $h6-font-size;
+		color: $primary;
+	}
+
+	* + .quote-text { margin-top: px-to-rem( 10px * $xs-multiplier ) }
+	* + .quote-cite { margin-top: px-to-rem( 22px * $xs-multiplier ) }
+}
+
+* + .quote-boxed { margin-top: px-to-rem( 54px * $xs-multiplier ) }
+
+
+// Media
+@include media-breakpoint-up( xxl ) {
+	.quote-boxed {
+		padding: px-to-rem( 50px * $lg-multiplier, 125px * $lg-multiplier, 60px * $lg-multiplier );
+
+		* + .quote-text { margin-top: px-to-rem( 10px * $lg-multiplier ) }
+		* + .quote-cite { margin-top: px-to-rem( 22px * $lg-multiplier ) }
+	}
+
+	* + .quote-boxed { margin-top: px-to-rem( 54px * $lg-multiplier ) }
+}
+
+@include media-breakpoint-up( xxl ) {
+	.quote-boxed {
+		padding: px-to-rem( 50px, 125px, 60px );
+
+		* + .quote-text { margin-top: px-to-rem( 10px ) }
+		* + .quote-cite { margin-top: px-to-rem( 22px ) }
+	}
+
+	* + .quote-boxed { margin-top: px-to-rem( 54px ) }
+}

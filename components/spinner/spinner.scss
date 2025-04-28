@@ -1,0 +1,92 @@
+@import "../bootstrap/scss/_functions";
+@import "../base/_functions";
+@import "../base/_variables";
+@import "../bootstrap/scss/_variables";
+@import "../bootstrap/scss/_mixins";
+
+
+// Base
+.spinner-form-wrap {
+	display: inline-block;
+}
+
+.ui-spinner {
+	position: relative;
+	display: block;
+	height: auto !important;
+}
+
+.ui-spinner-input {
+	width: px-to-rem( 90px );
+	height: px-to-rem( 43px );
+	-moz-appearance:textfield;
+	padding-left: px-to-rem( 12px );
+	padding-right: px-to-rem( 30px );
+	font-size: px-to-rem( 20px );
+	text-align: center;
+	color: $gray-900;
+	background-color: $input-bg;
+	border: $input-border-width solid $input-border-color;
+	border-radius: $border-radius;
+
+	&::-webkit-inner-spin-button {
+		display: none;
+	}
+}
+
+.ui-spinner-button {
+	position: absolute;
+	z-index: 3;
+	right: px-to-rem( 20px );
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	opacity: .2;
+	transition: $transition-base;
+
+	&:before {
+		content: '';
+		border-style: solid;
+		border-width: 7px 4px;
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+
+	&.ui-spinner-up {
+		bottom: calc( 50% + 5px );
+
+		&:before {
+			border-color: transparent transparent $gray-800 transparent;
+		}
+	}
+
+	&.ui-spinner-down {
+		top: calc( 50% + 5px );
+
+		&:before {
+			border-color: $gray-800 transparent transparent transparent;
+		}
+	}
+
+	&.ui-spinner-up.ui-button-icon:hover { border-bottom-color: $primary; }
+	&.ui-spinner-down.ui-button-icon:hover { border-top-color: $primary; }
+}
+
+* + .ui-spinner { margin-top: px-to-rem( 3px ) }
+
+
+// Media
+@include media-breakpoint-up( lg ) {
+	.ui-spinner-input {
+		height: px-to-rem( 52px );
+	}
+}
+
+@include media-breakpoint-up( xxl ) {
+	.ui-spinner-input {
+		height: px-to-rem( 70px );
+	}
+}

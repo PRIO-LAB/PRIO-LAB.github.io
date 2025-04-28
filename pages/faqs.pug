@@ -1,0 +1,15 @@
+extends ../components/base/_skeleton
+include ../components/rd-navbar/_rd-navbar-transparent
+include ../components/breadcrumb/_breadcrumb
+include ../components/base/_svg-elements
+
+block variables
+	- pageName = 'FAQs';
+
+block page
+	+rd-navbar
+	+breadcrumb-section
+	include ../components/section/_page-title-faq
+	include ../components/section/_accordion-line
+	include ../components/section/_contact-us-4
+	include ../components/footer/_footer-default

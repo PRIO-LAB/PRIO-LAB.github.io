@@ -1,0 +1,14 @@
+include ../pag/_pag
+
+// Pagination
++pag-light([
+	{start: true, actionClass: 'disabled pag-mobile-hide'},
+	{prev: true, actionClass: 'disabled'},
+	{value: '1', actionClass: 'active'},
+	{value: '2'},
+	{value: '3', actionClass: 'pag-mobile-hide'},
+	{value: '...', empty: true},
+	{value: '8'},
+	{next: true},
+	{end: true, actionClass: 'pag-mobile-hide'}
+]).justify-content-center.justify-content-md-start

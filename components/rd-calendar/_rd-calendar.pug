@@ -1,0 +1,11 @@
+//- RD Calendar
+	@param {object} data - data object
+	@param {string} data.title - rd-calendar title
+mixin rd-calendar-event( data )
+	// RD Calendar event
+	.rdc-event-block&attributes( attributes )
+		.rdc-event-title.h6= data.title
+		.rdc-event-meta
+			.rdc-event-meta-item= data.date
+			.rdc-event-meta-item= data.time
+		button.rdc-event-btn.btn.btn-sm.btn-outline-primary Book now

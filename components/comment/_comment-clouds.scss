@@ -1,0 +1,104 @@
+// Base
+.comment-clouds {
+	@include group( px-to-rem( 36px ), px-to-rem( 10px ) );
+
+	.comment-clouds {
+		padding-left: px-to-rem( 30px );
+	}
+
+	.comment-cloud {
+		padding: px-to-rem( 33px * $lg-multiplier, 30px * $lg-multiplier );
+	}
+
+	.comment-left {
+		flex-shrink: 0;
+	}
+
+	.comment-image {
+		border-radius: 50%;
+	}
+
+	.comment-meta,
+	.comment-link {
+		font-size: px-to-rem( 14px );
+	}
+
+	.comment-title {
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+
+	.comment-link-icon {
+		font-size: px-to-rem( 22px );
+	}
+
+	.comment-cloud {
+		padding: px-to-rem( 20px, 15px );
+		background-color: $gray-200;
+		@include cloud-item( 18px, right );
+		margin-left: 0;
+
+		&::before {
+			top: 0;
+			transform: translate( -48%, 0 ) skewX( 45deg );
+		}
+	}
+
+
+	// Spacing
+	* + .comment-meta { margin-top: px-to-rem( 6px * $xs-multiplier ) }
+	* + .comment-link { margin-top: px-to-rem( 13px * $xs-multiplier ) }
+	* + .comment-cloud { margin-top: px-to-rem( 13px * $xs-multiplier ) }
+}
+
+* + .comment-clouds { margin-top: px-to-rem( 51px * $xs-multiplier ) }
+.comment-clouds + .comment-clouds { margin-top: px-to-rem( 35px ) }
+.comment-clouds * + .comment-clouds { margin-top: px-to-rem( 25px ) }
+
+
+// Media
+@include media-breakpoint-up( sm ) {
+	.comment-clouds {
+		display: flex;
+
+		.comment-clouds {
+			padding-left: 0;
+		}
+	}
+}
+
+@include media-breakpoint-up( lg ) {
+	.comment-clouds {
+		@include group( px-to-rem( 36px ), px-to-rem( 10px ) );
+
+		.comment-cloud {
+			padding: px-to-rem( 33px * $lg-multiplier, 30px * $lg-multiplier );
+		}
+
+		* + .comment-meta { margin-top: px-to-rem( 6px * $lg-multiplier ) }
+		* + .comment-link { margin-top: px-to-rem( 13px * $lg-multiplier ) }
+		* + .comment-cloud { margin-top: px-to-rem( 13px * $lg-multiplier ) }
+	}
+
+	* + .comment-clouds { margin-top: px-to-rem( 51px * $lg-multiplier ) }
+	.comment-clouds + .comment-clouds { margin-top: px-to-rem( 27px * $lg-multiplier ) }
+	.comment-clouds * + .comment-clouds { margin-top: px-to-rem( 18px * $lg-multiplier ) }
+}
+
+@include media-breakpoint-up( xxl ) {
+	.comment-clouds {
+		@include group( px-to-rem( 36px ), px-to-rem( 10px ) );
+
+		.comment-cloud {
+			padding: px-to-rem( 33px, 30px, 29px );
+		}
+
+		* + .comment-meta { margin-top: px-to-rem( 6px ) }
+		* + .comment-link { margin-top: px-to-rem( 13px ) }
+		* + .comment-cloud { margin-top: px-to-rem( 13px ) }
+	}
+
+	* + .comment-clouds { margin-top: px-to-rem( 51px ) }
+	.comment-clouds + .comment-clouds { margin-top: px-to-rem( 27px ) }
+	.comment-clouds * + .comment-clouds { margin-top: px-to-rem( 18px ) }
+}

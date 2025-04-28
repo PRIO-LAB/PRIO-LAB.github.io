@@ -1,0 +1,95 @@
+//- Person
+	@param {object} data - data object
+	@param {string} data.img - person image
+	@param {string} data.title - person name
+	@param {string} data.meta - person meta
+	@param {string} data.text - person text
+mixin person-1( data )
+	// Person
+	.person&attributes( attributes )
+		.person-media
+			+img( data.img ).person-img
+		.person-title.h4: a( href='single-doctor-page.html' )= data.title
+		.person-meta.title-2= data.meta
+		.person-text= data.text
+		a.person-link.link.link-arrow( href='single-doctor-page.html' ) Learn more
+
+//- Person side
+	@param {object} data - data object
+	@param {string} data.img - person image
+	@param {string} data.title - person name
+	@param {string} data.meta - person meta
+	@param {string} data.text - person text
+mixin person-side( data )
+	// Person side
+	.person.person-side&attributes( attributes )
+		.person-media
+			+img( data.img ).person-img
+		.person-body
+			.person-title.h6: a( href='#' )= data.title
+			.person-meta.small= data.date
+
+//- Person side 2
+	@param {object} data - data object
+	@param {string} data.img - person image
+	@param {string} data.title - person name
+	@param {string} data.meta - person meta
+	@param {string} data.text - person text
+mixin person-side-2( data )
+	// Person side
+	.person.person-side&attributes( attributes )
+		.person-media
+			+img( data.img ).person-img
+		.person-body
+			span= 'by '
+			span.person-title.h6= data.author
+			span= ' posted '
+			span.person-meta.small= data.date
+
+//- Person post
+	@param {object} data - data object
+	@param {string} data.img - person image
+	@param {string} data.title - person name
+	@param {string} data.meta - person meta
+	@param {string} data.text - person text
+mixin person-post( data )
+	// Person post
+	.person.person-post&attributes( attributes )
+		.person-body
+			.person-media
+				+img( data.img ).person-img
+			.person-subtitle.h5= data.subtitle
+			.person-title.h3= data.title
+			.person-text= data.text
+
+//- Person book
+	@param {object} data - data object
+	@param {string} data.img - person image
+	@param {string} data.title - person name
+	@param {string} data.text - person text
+mixin person-book( data )
+	// Person side large
+	.person.person-book&attributes( attributes )
+		.person-title.h4: a( href='#' )= data.title
+		.person-date
+			span.person-date-icon.onclinic-book
+			time.person-time.h5(datetime="2020")= data.date
+		.person-meta= data.meta
+
+//- Person social
+	@param {object} data - data object
+	@param {string} data.img - person image
+	@param {string} data.title - person name
+	@param {string} data.meta - person meta
+	@param {string} data.text - person text
+mixin person-social( data )
+	// Person
+	.person.person-social&attributes( attributes )
+		.person-media
+			+img( data.img ).person-img
+		.person-title.h4= data.title
+		.person-text= data.text
+		.social
+			a( href='#' ).social-icon.icon.icon-md.icon-link.icon-base.mdi-facebook
+			a( href='#' ).social-icon.icon.icon-md.icon-link.icon-base.mdi-twitter
+			a( href='#' ).social-icon.icon.icon-md.icon-link.icon-base.mdi-instagram

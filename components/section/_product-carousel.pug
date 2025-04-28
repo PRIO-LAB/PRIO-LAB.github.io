@@ -1,0 +1,51 @@
+include ../product/_product
+
+// Product simple
+section.section.section-md.bg-transparent
+	.container
+		h3.text-center Featured products
+		.owl-carousel.owl-carousel-nav-1.owl-content-1( data-owl= { dots: true, nav: true }, data-loop='false', data-items='1', data-sm-items='2', data-md-items='3', data-lg-items='4' )
+			+product-light({
+				img: 'product-02-260x260',
+				tags: [
+					{ title: 'New', class: 'tag-primary-lighter' }
+				],
+				rating: [ 'mdi-star', 'mdi-star', 'mdi-star', 'mdi-star', 'mdi-star rating-item-disabled'  ],
+				title: 'DJI Inspire 2 with Zenmuse X5S 4K Camera',
+				price: '$45.89'
+			})
+			+product-light({
+				img: 'product-03-260x260',
+				tags: [
+					{ title: 'Featured' }
+				],
+				title: 'DJI Phantom 4 RTK SDK Professional Drone',
+				price: '$45.89'
+			})
+			+product-light({
+				img: 'product-04-260x260',
+				rating: [ 'mdi-star', 'mdi-star', 'mdi-star', 'mdi-star', 'mdi-star'  ],
+				title: 'DJI Mavic 2 Enterprise Dual with Fly More Kit',
+				price: '$45.89'
+			})
+			+product-light({
+				img: 'product-05-260x260',
+				title: 'Ryze Tello Drone Boost Combo - Powered by DJI',
+				price: '$45.89'
+			})
+			+product-light({
+				img: 'product-06-260x260',
+				rating: [ 'mdi-star', 'mdi-star', 'mdi-star', 'mdi-star', 'mdi-star'  ],
+				title: 'Parrot Anafi Thermal Drone - Extended Pack',
+				price: '$45.89'
+			})
+			+product-light({
+				img: 'product-07-260x260',
+				title: 'ProFlight Seeker Drone with 2MP Camera',
+				price: '$45.89'
+			})
+			+product-light({
+				img: 'product-08-260x260',
+				title: 'ProFlight Orbit Folding Camera Drone with GPS',
+				price: '$45.89'
+			})

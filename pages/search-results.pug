@@ -1,0 +1,13 @@
+extends ../components/base/_skeleton
+include ../components/rd-navbar/_rd-navbar-transparent
+include ../components/breadcrumb/_breadcrumb
+include ../components/base/_svg-elements
+
+block variables
+	- pageName = 'Search Results';
+
+block page
+	+rd-navbar
+	+breadcrumb-section
+	include ../components/section/_search-results
+	include ../components/footer/_footer-default

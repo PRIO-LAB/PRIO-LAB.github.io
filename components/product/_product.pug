@@ -1,0 +1,88 @@
+//- Product
+	@param {object} data - data object
+	@param {string} data.img - product image
+	@param {string} data.title - product name
+	@param {string} data.text - product text
+mixin product( data )
+	// Product
+	.product.product-simple&attributes( attributes )
+		.product-media
+			+img( data.img ).product-img
+		.product-body
+			.product-title.h4= data.title
+			.product-text= data.text
+			a.product-link.title-2( href='store-catalog.html' ) 4 products
+
+//- Product light
+	@param {object} data - data object
+	@param {string} data.img - product image
+	@param {string} data.title - product name
+	@param {string} data.text - product text
+mixin product-light( data )
+	//- Product
+	.product.product-light&attributes( attributes )
+		.product-media
+			+img( data.img ).product-img
+			.product-tags
+				if ( data.tags )
+					each tag in data.tags
+						.tag.tag-sm( class= tag.class ? tag.class : 'tag-gray' )= tag.title
+		.product-body
+			if ( data.rating )
+				.product-rating.rating
+					each item in data.rating
+						span.rating-item( class= item ? item : '' )
+			.product-title: a.link.link-inherit( href='single-product.html' )= data.title
+			.product-price= data.price
+
+//- Product extended
+	@param {object} data - data object
+	@param {string} data.img - product image
+	@param {string} data.title - product name
+	@param {string} data.text - product text
+mixin product-extended( data )
+	// Product extended
+	.product.product-extended&attributes( attributes )
+		.product-media
+			+img( data.img ).product-img
+			.product-meta
+				.product-tags
+					if ( data.tags )
+						each tag in data.tags
+							.tag.tag-sm( class= tag.class ? tag.class : '' )= tag.title
+				.product-like
+					.product-like-icon.icon.mdi-heart
+		.product-rating.rating
+			span.rating-item.mdi-star
+			span.rating-item.mdi-star
+			span.rating-item.mdi-star
+			span.rating-item.mdi-star
+			span.rating-item.rating-item-disabled.mdi-star
+		.product-title.title-2: a( href='#' )= data.title
+		.product-text: a.link.link-inherit( href='single-product.html' )= data.text
+		.product-price= data.price
+		a.product-btn.btn.btn-block.btn-dark( href='#' )
+			span.btn-icon.mdi-cart
+			span Add to Cart
+
+//- Product small
+	@param {object} data - data object
+	@param {string} data.img - product image
+	@param {string} data.title - product name
+	@param {string} data.text - product text
+mixin product-small( data )
+	// Product small
+	.product.product-small&attributes( attributes )
+		.product-media
+			+img( data.img ).product-img
+		.product-body
+			.product-rating.rating
+				span.rating-item.mdi-star
+				span.rating-item.mdi-star
+				span.rating-item.mdi-star
+				span.rating-item.mdi-star
+				span.rating-item.rating-item-disabled.mdi-star
+			.product-title.title-2: a( href='single-product.html' )= data.title
+			.product-text= data.text
+			.product-price= data.price
+			.product-text-2= data.text2

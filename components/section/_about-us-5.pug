@@ -1,0 +1,48 @@
+include ../counter/_counter
+
+// About us 5
+section.section.section-md.bg-transparent.bg-image-1( style='background-image: url(images/pattern-1-1920x1368.jpg)' )
+	.container
+		.row.row-30.row-lg-50.row-xxl-100.justify-content-center
+			.col-12.text-center
+				.title-1 Our features
+				h2 Why choose us
+
+			.col-12
+				.row.row-30.justify-content-center.align-items-md-center
+					.col-6.col-sm-4.col-md-3
+						+counter-boxed({
+							value: 15,
+							title: 'Years of work'
+						}).counter-boxed-light
+					.col-6.col-sm-4.col-md-3
+						+counter-boxed({
+							value: 5,
+							postfix: 'K+',
+							title: 'Drones sold annually'
+						})
+					.col-sm-8.col-md-5.col-lg-5.ml-md-auto
+						h3 Price & Service
+						p At Dronix, we offer first-class drones at highly affordable prices. Besides, we guarantee that you will be satisfied with our customer service.
+						a.link.link-offset-1.font-weight-medium( href='about-us.html' ) Learn More About Us
+
+			.col-12
+				.row.row-30.align-items-center.justify-content-between.flex-md-row-reverse
+					.col-md-5.col-lg-6
+						.row.row-20.row-lg-40
+							.col-12
+								+img( 'image-04-334x250.png' )
+							.col-4
+								+img( 'image-05-160x112.png' )
+							.col-8
+								+img( 'image-06-360x270.png' )
+
+					.col-md-6.col-lg-5
+						h3 Availability
+						p Our products are available worldwide thanks to our shipping & delivery partners who offer:
+						ul.list.list-marked
+							li.list-item 24/7 delivery services
+							li.list-item Qualified consultations
+							li.list-item Any necessary support
+						.btn-group-2
+							a.btn.btn-lg.btn-primary( href='contacts.html' ) Get in Touch

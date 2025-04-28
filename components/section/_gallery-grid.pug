@@ -1,0 +1,84 @@
+include ../thumbnail/_thumbnail
+
+// Gallery grid
+section.section.section-md.bg-transparent
+	.container
+		.text-block.text-center
+			.title-1 Gallery
+			h1 Our portfolio
+
+		.isotope-wrap.isotope-line
+			.isotope-filters.nav.nav-line.justify-content-center
+				.nav-item: .nav-link.isotope-filter.active( data-isotope-filter="*" ) All
+				.nav-item: .nav-link.isotope-filter( data-isotope-filter=".clinic" ) Drones
+				.nav-item: .nav-link.isotope-filter( data-isotope-filter=".doctors" ) Landscapes
+			.isotope.row.row-20.row-lg-40( data-lightgallery )
+				.col-sm-6.col-md-4.isotope-item.doctors
+					+thumbnail-banner({
+						img: 'image-15-360x270',
+						imgOriginal: 'image-15-1200x800.jpg',
+						title: 'Amet nisl suscipit adipiscing bibendum tellus.'
+					})
+				.col-sm-6.col-md-4.isotope-item.clinic
+					+thumbnail-banner({
+						img: 'image-09-360x270',
+						imgOriginal: 'image-09-800x1200.jpg',
+						title: 'Amet nisl suscipit adipiscing bibendum tellus.'
+					})
+				.col-sm-6.col-md-4.isotope-item.doctors
+					+thumbnail-banner({
+						img: 'image-06-360x270',
+						imgOriginal: 'image-06-1200x800.jpg',
+						title: 'Amet nisl suscipit adipiscing bibendum tellus.'
+					})
+
+				.col-sm-6.col-md-4.isotope-item.doctors
+					+thumbnail-banner({
+						img: 'image-08-360x270',
+						imgOriginal: 'image-08-1200x800.jpg',
+						title: 'Amet nisl suscipit adipiscing bibendum tellus.'
+					})
+				.col-sm-6.col-md-4.isotope-item.clinic
+					+thumbnail-banner({
+						img: 'image-07-360x270',
+						imgOriginal: 'image-07-1200x800.jpg',
+						title: 'Amet nisl suscipit adipiscing bibendum tellus.'
+					})
+				.col-sm-6.col-md-4.isotope-item.clinic
+					+thumbnail-banner({
+						img: 'image-20-360x270',
+						imgOriginal: 'image-20-1200x800.jpg',
+						title: 'Amet nisl suscipit adipiscing bibendum tellus.'
+					})
+
+				.col-sm-6.col-md-4.isotope-item.doctors
+					+thumbnail-banner({
+						img: 'image-19-360x270',
+						imgOriginal: 'image-19-1200x800.jpg',
+						title: 'Amet nisl suscipit adipiscing bibendum tellus.'
+					})
+				.col-sm-6.col-md-4.isotope-item.clinic
+					+thumbnail-banner({
+						img: 'image-17-360x270',
+						imgOriginal: 'image-17-1200x800.jpg',
+						title: 'Amet nisl suscipit adipiscing bibendum tellus.'
+					})
+				.col-sm-6.col-md-4.isotope-item.doctors
+					+thumbnail-banner({
+						img: 'image-03-360x270',
+						imgOriginal: 'image-03-1200x800.jpg',
+						title: 'Amet nisl suscipit adipiscing bibendum tellus.'
+					})
+
+				.col-sm-6.col-md-4.isotope-item.clinic
+					+thumbnail-banner({
+						img: 'image-16-360x270',
+						imgOriginal: 'image-16-1200x800.jpg',
+						title: 'Amet nisl suscipit adipiscing bibendum tellus.'
+					})
+				.col-sm-6.col-md-4.isotope-item.clinic
+					+thumbnail-banner({
+						img: 'image-22-360x270',
+						imgOriginal: 'image-22-1200x800.jpg',
+						title: 'Amet nisl suscipit adipiscing bibendum tellus.'
+					})

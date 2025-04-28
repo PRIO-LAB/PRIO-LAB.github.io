@@ -1,0 +1,34 @@
+include ../thumbnail/_thumbnail
+
+// Cases
+section.section.section-md.bg-200
+	.container
+		.text-block
+			.title-1 Videos Shot by Our Drones
+			h2 Showcase
+		.owl-carousel.owl-carousel-pagination-top.owl-content-1( data-owl= { dots: true }, data-loop='false', data-items='1', data-sm-items='2', data-md-items='3' )
+			+thumbnail-video({
+				img: 'image-07-360x270',
+				title: 'Peruvian Adventure',
+				date: '20 may, 2020',
+				text: 'Take a look at these awesome video submitted by Andrew Wilson, a professional videographer.'
+			})
+			+thumbnail-video({
+				img: 'image-08-360x270',
+				title: 'Flying Over Bali',
+				date: '20 may, 2020',
+				text: 'Check out this spectacular video montage published on YouTube by one of our customers.'
+			})
+			+thumbnail-video({
+				img: 'image-09-360x270',
+				title: 'The Beauty of Scotland',
+				date: '20 may, 2020',
+				text: 'Scotland has some purely divine landscapes. The latest showcase submission proves this fact.'
+			})
+
+			+thumbnail-video({
+				img: 'image-10-360x270',
+				title: 'American Landscapes',
+				date: '20 may, 2020',
+				text: 'This video was shot by several owners of our drones for commercial purposes back in 2010.'
+			})

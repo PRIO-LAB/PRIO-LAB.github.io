@@ -1,0 +1,33 @@
+// Base
+.quote-4 {
+	padding: px-to-rem( 30px, 25px );
+	box-shadow: $box-shadow;
+
+	.quote-icon {
+		position: absolute;
+		top: px-to-rem( 25px );
+		left: px-to-rem( 20px );
+		opacity: .2;
+	}
+}
+
+
+// Owl carousel context
+.owl-carousel {
+	.quote-4 {
+		transition: $transition-base;
+	}
+}
+
+
+// Media
+@include media-breakpoint-up( lg ) {
+	.quote-4 {
+		padding: px-to-rem( 44px, 39px, 36px );
+
+		.quote-icon {
+			top: px-to-rem( 35px );
+			left: px-to-rem( 30px );
+		}
+	}
+}

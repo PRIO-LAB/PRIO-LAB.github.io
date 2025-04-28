@@ -1,0 +1,38 @@
+//- Comment
+	@param {object} obj - data object
+	@param {string} data.img - comment image
+	@param {string} data.name - meta name
+	@param {string} data.time - meta time
+	@param {string} data.text - quote text
+mixin comment-clouds( data )
+	.comment.comment-clouds&attributes( attributes )
+		.comment-left
+			+img( data.img ).comment-image
+		.comment-body
+			.comment-meta
+				.comment-meta-item
+					= 'by '
+					span.comment-title= data.author
+					= ' posted '
+					span.comment-date= data.date
+			.comment-cloud
+				.comment-text= data.comment
+			a.comment-link( href='#' )
+				span.comment-link-icon.mdi-chevron-left
+				span Reply
+			if (block)
+				block
+
+//- Comment simple
+	@param {object} obj - data object
+	@param {string} data.img - comment image
+	@param {string} data.name - meta name
+	@param {string} data.time - meta time
+	@param {string} data.text - quote text
+mixin comment-simple( data )
+	.comment.comment-simple&attributes( attributes )
+		.comment-meta
+			.comment-meta-item
+				span.comment-author= data.author
+				span= ' on'
+		.comment-title.h6: a( href='#' )= data.title

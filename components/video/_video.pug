@@ -1,0 +1,7 @@
+//- Video box
+	@param {object} data - data object
+	@param {string} data.background - image path for background
+	@param {string} data.link - video link
+mixin video( data )
+	a.video( style="background-image: url('images/" + data.background + "');" data-lightgallery!={ selector: 'this' } href=data.link )&attributes( attributes )
+		span.video-icon.icon.linearicons-play-circle

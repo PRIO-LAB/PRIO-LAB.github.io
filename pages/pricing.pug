@@ -1,0 +1,13 @@
+extends ../components/base/_skeleton
+include ../components/rd-navbar/_rd-navbar-transparent
+include ../components/breadcrumb/_breadcrumb
+
+block variables
+	- pageName = 'Pricing';
+
+block page
+	+rd-navbar
+	+breadcrumb-section
+	include ../components/section/_price-boxed
+	include ../components/section/_contact-us-1
+	include ../components/footer/_footer-default

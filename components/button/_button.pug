@@ -1,0 +1,6 @@
+//- Button lg primary modal
+	@param {object} data - data object
+	@param {string} data.target - button modal target id
+mixin btn-lg-primary-modal( data )
+	- data = data || {}
+	button.btn.btn-lg.btn-primary( data-toggle="modal", data-target= data.target ? data.target : "#appointment" ) Book Now

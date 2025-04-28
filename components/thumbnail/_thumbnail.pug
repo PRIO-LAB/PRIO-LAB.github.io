@@ -1,0 +1,44 @@
+//- Thumbnail
+	@param {object} data - data object
+	@param {string} data.img - thumbnail image
+	@param {string} data.title - thumbnail name
+	@param {string} data.meta - thumbnail meta
+	@param {string} data.text - thumbnail text
+mixin thumbnail( data )
+	// Thumbnail
+	.thumbnail&attributes( attributes )
+		.thumbnail-media
+			+img( data.img ).thumbnail-img
+		.thumbnail-title.h5= data.title
+		.thumbnail-text= data.text
+
+//- Thumbnail banner
+	@param {object} data - data object
+	@param {string} data.img - thumbnail image
+	@param {string} data.title - thumbnail name
+	@param {string} data.text - thumbnail text
+mixin thumbnail-banner( data )
+	// Thumbnail banner
+	.thumbnail.thumbnail-banner&attributes( attributes )
+		a.thumbnail-media.lightgallery-item( href=`images/${data.imgOriginal}` )
+			+img( data.img ).thumbnail-img
+			.thumbnail-body
+				.thumbnail-icon.onclinic-search
+				.thumbnail-title.small-1= data.title
+
+//- Thumbnail video
+	@param {object} data - data object
+	@param {string} data.img - thumbnail image
+	@param {string} data.title - thumbnail name
+	@param {string} data.meta - thumbnail meta
+	@param {string} data.text - thumbnail text
+mixin thumbnail-video( data )
+	// Thumbnail
+	.thumbnail.thumbnail-video&attributes( attributes )
+		a.thumbnail-media.lightgallery-item( data-lightgallery!={ selector: 'this' }, href= 'https://www.youtube.com/embed/KdvwuQi0AJc' )
+			+img( data.img ).thumbnail-img
+			span.thumbnail-icon.mdi-play
+		.thumbnail-title.h4: a( href='single-purpose.html' )= data.title
+		.thumbnail-meta= data.date
+		.thumbnail-text= data.text
+		a.thumbnail-link.link( href='single-purpose.html' ) Learn more

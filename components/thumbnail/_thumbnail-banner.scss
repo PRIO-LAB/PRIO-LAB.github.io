@@ -1,0 +1,75 @@
+// Base
+.thumbnail-banner {
+	display: block;
+	position: relative;
+	overflow: hidden;
+
+	.thumbnail-body {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: px-to-rem( 30px, 15px );
+		color: $white;
+		background-color: rgba( $gray-800, .8 );
+	}
+
+	.thumbnail-icon {
+		align-self: flex-end;
+	}
+
+	.thumbnail-title {
+		color: inherit;
+	}
+}
+
+.desktop {
+	.thumbnail-banner {
+		.thumbnail-body {
+			opacity: 0;
+			transition: $transition-base;
+		}
+
+		.thumbnail-icon {
+			transform: translateX( -20px );
+			transition: inherit;
+		}
+
+		.thumbnail-title {
+			transform: translateX( 20px );
+			transition: inherit;
+		}
+
+		&:hover {
+			.thumbnail-body {
+				opacity: 1;
+			}
+
+			.thumbnail-icon,
+			.thumbnail-title {
+				transform: translateX( 0 );
+			}
+		}
+	}
+}
+
+// Media
+@include media-breakpoint-up( lg ) {
+	.thumbnail-banner {
+		.thumbnail-body {
+			padding: px-to-rem( 40px * $lg-multiplier, 40px * $lg-multiplier, 30px * $lg-multiplier );
+		}
+	}
+}
+
+@include media-breakpoint-up( xxl ) {
+	.thumbnail-banner {
+		.thumbnail-body {
+			padding: px-to-rem( 40px, 40px, 30px );
+		}
+	}
+}

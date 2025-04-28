@@ -1,0 +1,82 @@
+include ../rating/_rating
+
+// Single product review
+section.section.section-md.bg-transparent
+	.container
+		.tab
+			ul.nav.nav-line( role='tablist' )
+				li.nav-item: a.nav-link.h6.active( data-toggle='tab', href='#navLine2-1', role='tab', aria-selected='true' ) Description
+				li.nav-item: a.nav-link.h6( data-toggle='tab', href='#navLine2-2', role='tab', aria-selected='false' ) Aditional Information
+				li.nav-item: a.nav-link.h6( data-toggle='tab', href='#navLine2-3', role='tab', aria-selected='false' ) Reviews 0
+			.tab-content
+				#navLine2-1.tab-pane.fade.show.active( role='tabpanel' )
+					.row.row-30.row-content.flex-sm-row-reverse
+						.col-sm-6
+							+img( 'image-06-560x420' )
+						.col-sm-6
+							h3 Professional image quality and flight stability
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+							p Ut etiam sit amet nisl purus. Egestas egestas fringilla phasellus faucibus scelerisque eleifend. Aliquet lectus proin nibh nisl condimentum id venenatis a condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					.row.row-30.row-content.align-items-center.justify-content-between
+						.col-sm-6
+							+img( 'image-16-560x420' )
+						.col-sm-6.col-xl-5
+							p Turpis in eu mi bibendum neque egestas congue quisque. Viverra suspendisse potenti nullam
+							ul.list.list-marked
+								li.list-item Improved stability
+								li.list-item Increased flight time
+								li.list-item Simple handling
+							p Ut etiam sit amet nisl purus. Egestas egestas fringilla phasellus faucibus scelerisque
+
+				#navLine2-2.tab-pane.fade( role='tabpanel' )
+					h3 Aditional Information
+					.table-container.table-responsive
+						table.table.table-separate
+							tbody
+								tr
+									td.font-weight-medium Max Takeoff Weight
+									td 9.37lbs (4250 g)
+								tr
+									td.font-weight-medium Max Speed
+									td 58 mph or 94 kph(Sport mode)
+								tr
+									td.font-weight-medium Power Supply
+									td Built-in battery
+								tr
+									td.font-weight-medium Ultrasonic Sensor Range
+									td 0.33-16.4 feet (10-500 cm)
+								tr
+									td.font-weight-medium Manufacturer
+									td DJI
+
+				#navLine2-3.tab-pane.fade( role='tabpanel' )
+					h3 Reviews
+					p There are no reviews yet.
+					h4 Be the first to review “DJI Mavic 2 Pro”
+					p.small Your email address will not be published. Required fields are marked *
+					.group-5.group-offset-1
+					form.rd-form
+						.row.row-20.align-items-center
+							.col-12.mb-2
+								.group-5.d-flex.flex-wrap.align-items-center
+									div
+										label.form-label * Rating
+									div
+										+rating
+							.col-12
+								.form-group
+									label.form-label( for='product-overview-message' ) * Comment
+									.form-control-wrap
+										textarea#product-overview-message.form-control.textarea-1( name='textarea', placeholder='Your comment', data-constraints='@Required' )
+							.col-md-6
+								.form-group
+									label.form-label( for='product-overview-name' ) * Full name
+									.form-control-wrap
+										input#product-overview-name.form-control( type='text', name='name', placeholder='e.g. Adam Smith', data-constraints='@Required' )
+							.col-md-6
+								.form-group
+									label.form-label( for='product-overview-email' ) * Email
+									.form-control-wrap
+										input#product-overview-email.form-control( type='email', name='email', placeholder='e.g. adamsmith@company.com', data-constraints='@Email @Required' )
+						.rd-form-btn.rd-form-btn-1.text-left
+							button.btn.btn-lg.btn-primary( type='submit' ) Submit

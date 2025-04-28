@@ -1,0 +1,176 @@
+include ../person/_person
+include ../button/_button
+
+// Booking calendar
+section.section.section-md.bg-transparent
+	.container
+		.title-1.text-center Book an appointment
+		.rd-booking-calendar#chapters-select
+			.rdc-panel.text-center
+				.rdc-prev.onclinic-chevron-left-thin
+				.rdc-panel-title.h1
+					span.rdc-month
+					=' '
+					span.rdc-fullyear
+				.rdc-next.onclinic-chevron-right-thin
+			.rdc-input.text-center
+				.select-wrap.d-inline-block( style='min-width:280px' )
+					select#product-select.select2( name='calendar-theme' )
+						option Default calendar
+						option Dark theme
+						option Light theme
+			.rdc-table
+			.rdc-events
+				a.rdc-events_close
+				ul
+					li.rdc-event(data-date='05/15/2020')
+						table.table.rdc-event-booking-table
+							thead
+								tr
+									th(colspan="2"): .h3 Available Appointments on May 15, 2020
+							tbody
+								tr
+									td
+										+person-book({
+											title: 'Emma Wilson',
+											date: '4:00 am - 5:00 am',
+											meta: '12 spaces available'
+										})
+									td.text-md-right
+										+btn-lg-primary-modal
+								tr
+									td
+										+person-book({
+											title: 'Richard Adams',
+											date: '5:00 am - 7:00 am',
+											meta: '12 spaces available'
+										})
+									td.text-md-right
+										+btn-lg-primary-modal
+
+
+					li.rdc-event(data-date='06/22/2020')
+						table.table.rdc-event-booking-table
+							thead
+								tr
+									th(colspan="2"): .h3 Available Appointments on June 22, 2020
+							tbody
+								tr
+									td
+										+person-book({
+											title: 'Emma Wilson',
+											date: '4:00 am - 5:00 am',
+											meta: '12 spaces available'
+										})
+									td.text-md-right
+										+btn-lg-primary-modal
+								tr
+									td
+										+person-book({
+											title: 'Richard Adams',
+											date: '5:00 am - 7:00 am',
+											meta: '12 spaces available'
+										})
+									td.text-md-right
+										+btn-lg-primary-modal
+
+
+					li.rdc-event(data-date='07/14/2020')
+						table.table.rdc-event-booking-table
+							thead
+								tr
+									th(colspan="2"): p.heading-6 Available Appointments on July 14, 2020
+							tbody
+								tr
+									td
+										+person-book({
+											title: 'Emma Wilson',
+											date: '4:00 am - 5:00 am',
+											meta: '12 spaces available'
+										})
+									td.text-md-right
+										+btn-lg-primary-modal
+								tr
+									td
+										+person-book({
+											title: 'Richard Adams',
+											date: '5:00 am - 7:00 am',
+											meta: '12 spaces available'
+										})
+									td.text-md-right
+										+btn-lg-primary-modal
+
+					li.rdc-event(data-date='08/14/2020')
+						table.table.rdc-event-booking-table
+							thead
+								tr
+									th(colspan="2"): p.heading-6 Available Appointments on August 14, 2020
+							tbody
+								tr
+									td
+										+person-book({
+											title: 'Emma Wilson',
+											date: '4:00 am - 5:00 am',
+											meta: '12 spaces available'
+										})
+									td.text-md-right
+										+btn-lg-primary-modal
+								tr
+									td
+										+person-book({
+											title: 'Richard Adams',
+											date: '5:00 am - 7:00 am',
+											meta: '12 spaces available'
+										})
+									td.text-md-right
+										+btn-lg-primary-modal
+
+					li.rdc-event(data-date='09/14/2020')
+						table.table.rdc-event-booking-table
+							thead
+								tr
+									th(colspan="2"): p.heading-6 Available Appointments on September 14, 2020
+							tbody
+								tr
+									td
+										+person-book({
+											title: 'Emma Wilson',
+											date: '4:00 am - 5:00 am',
+											meta: '12 spaces available'
+										})
+									td.text-md-right
+										+btn-lg-primary-modal
+								tr
+									td
+										+person-book({
+											title: 'Richard Adams',
+											date: '5:00 am - 7:00 am',
+											meta: '12 spaces available'
+										})
+									td.text-md-right
+										+btn-lg-primary-modal
+
+					li.rdc-event(data-date='10/14/2020')
+						table.table.rdc-event-booking-table
+							thead
+								tr
+									th(colspan="2"): p.heading-6 Available Appointments on October 14, 2020
+							tbody
+								tr
+									td
+										+person-book({
+											title: 'Emma Wilson',
+											date: '4:00 am - 5:00 am',
+											meta: '12 spaces available'
+										})
+									td.text-md-right
+										+btn-lg-primary-modal
+								tr
+									td
+										+person-book({
+											title: 'Richard Adams',
+											date: '5:00 am - 7:00 am',
+											meta: '12 spaces available'
+										})
+									td.text-md-right
+										+btn-lg-primary-modal

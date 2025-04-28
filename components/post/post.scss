@@ -1,0 +1,51 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+// Post
+.post-media {
+	display: block;
+}
+
+.post-img {
+	width: 100%;
+	transition: $transition-base;
+
+	&:hover {
+		opacity: .8;
+	}
+}
+
+.post-icon {
+	align-items: center;
+	justify-content: center;
+	margin-top: -1px; // vertical align fix
+	vertical-align: middle;
+	color: $white;
+	background-color: $primary-light;
+	border-radius: 50%;
+}
+
+.post-subtitle {
+	color: $primary;
+}
+
+
+* + .post-title { margin-top: px-to-rem( 16px ) }
+* + .post-text { margin-top: px-to-rem( 8px ) }
+* + .post-meta { margin-top: px-to-rem( 12px ) }
+
+.post-meta-align {
+	.post-meta {
+		justify-content: space-between;
+	}
+}
+
+
+// Layouts
+@import "post-boxed";
+@import "post-simple";
+@import "post-small";

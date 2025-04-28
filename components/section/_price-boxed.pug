@@ -1,0 +1,42 @@
+include ../box/_box
+
+// Price boxed
+section.section.section-md.bg-transparent
+	.container
+		.text-block.text-center
+			.title-1 Our pricing
+			h2 Dronix provides simple & affordable pricing for every customer
+		.row.row-20.row-lg-40.row-content-2
+			.col-sm-6.col-lg-4.d-flex
+				+box-pricing({
+					title: 'Basic',
+					price: '$358',
+					list: [
+						'Beginner-level drones',
+						'Free camera accessories',
+						'Free US shipping',
+						'Phone support'
+					]
+				})
+			.col-sm-6.col-lg-4.d-flex
+				+box-pricing({
+					title: 'Standard',
+					price: '$595',
+					list: [
+						'Advanced-level drones',
+						'Discounted accessories',
+						'Free global shipping',
+						'Daily support'
+					]
+				})
+			.col-sm-6.col-lg-4.d-flex
+				+box-pricing({
+					title: 'Premium',
+					price: '$692',
+					list: [
+						'Professional-level drones',
+						'Free accessories',
+						'Free shipping & consulting',
+						'24/7 support'
+					]
+				})

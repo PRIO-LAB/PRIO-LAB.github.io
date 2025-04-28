@@ -1,0 +1,79 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+
+// Base
+.image {
+
+}
+
+.image-block {
+	display: block;
+	width: 100%;
+}
+
+.image-wrap {
+	position: relative;
+	padding: px-to-rem( 30px, 0 );
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		bottom: 0;
+		width: 55%;
+		content: '';
+		transform: translateX( -50% );
+		background-color: $primary-light;
+	}
+
+	.image {
+		position: relative;
+		z-index: 1;
+	}
+}
+
+// Spacing
+* + .image-2 { margin-top: px-to-rem( 102px * $xs-multiplier ) }
+* + .image-3 { margin-top: px-to-rem( 80px * $xs-multiplier ) }
+* + .image-4,
+	* + .image-4 + p { margin-top: px-to-rem( 50px * $xs-multiplier ) }
+.image + .image { margin-top: px-to-rem( 20px ) }
+
+// Modifying
+.image-1 {
+	width: 320px;
+}
+
+@include media-breakpoint-up( xs ) {
+	.image-1 {
+		width: auto;
+	}
+}
+
+@include media-breakpoint-up( lg ) {
+	.image-wrap {
+		padding: px-to-rem( 130px * $lg-multiplier, 0 );
+	}
+
+	.image + .image { margin-top: px-to-rem( 40px ) }
+	* + .image-2 { margin-top: px-to-rem( 102px * $lg-multiplier ) }
+	* + .image-3 { margin-top: px-to-rem( 80px * $lg-multiplier ) }
+	* + .image-4,
+	* + .image-4 + p { margin-top: px-to-rem( 50px * $lg-multiplier ) }
+}
+
+@include media-breakpoint-up( xxl ) {
+	.image-wrap {
+		padding: px-to-rem( 130px, 0 );
+	}
+
+	* + .image-2 { margin-top: px-to-rem( 102px ) }
+	* + .image-3 { margin-top: px-to-rem( 80px ) }
+	* + .image-4,
+	* + .image-4 + p { margin-top: px-to-rem( 50px ) }
+}

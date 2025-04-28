@@ -1,0 +1,26 @@
+// Reviews
+section.section.swiper-container.swiper-primary( data-swiper!={ effect:"fade" } )
+	// Additional required wrapper
+	.swiper-wrapper
+		// Slides
+		.swiper-slide.text-center( style='background-image: url( images/image-01-1920x880.jpg )' )
+			.container
+				.row.justify-content-center
+					.col-md-9.col-xl-7
+						h1.swiper-title Providing a Wide Choice of Drones
+						.btn-group-1
+							a.btn.btn-lg.btn-primary( href='store-catalog.html' ) Explore
+							a.icon.icon-btn.mdi-play.lightgallery-item( data-lightgallery!={ selector: 'this' }, href='https://www.youtube.com/embed/KdvwuQi0AJc' )
+
+		.swiper-slide( style='background-image: url( images/image-02-1920x880.jpg )' )
+			.container
+				.row
+					.col-md-10.col-xl-8
+						h1.swiper-title Top-Rated Camera Drones
+						.btn-group-1
+							a.btn.btn-lg.btn-primary( href='purposes.html' ) Explore
+							a.icon.icon-btn.mdi-play.lightgallery-item( data-lightgallery!={ selector: 'this' }, href='https://www.youtube.com/embed/KdvwuQi0AJc' )
+
+	.swiper-pagination-wrap
+		.container
+			.swiper-pagination

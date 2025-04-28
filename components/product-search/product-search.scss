@@ -1,0 +1,44 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+// Base
+.product-search {
+	border-bottom: 1px solid $border-color;
+}
+
+.product-search-inner {
+	padding-bottom: px-to-rem( 50px * $xs-multiplier );
+	text-align: center;
+	@include group( px-to-rem( 20px ), px-to-rem( 20px ) )
+}
+
+.product-search-results {
+	opacity: .5;
+}
+
+
+@include media-breakpoint-up( md ) {
+	.product-search-inner {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		align-items: center;
+		text-align: left;
+	}
+}
+
+@include media-breakpoint-up( lg ) {
+	.product-search-inner {
+		padding-bottom: px-to-rem( 40px * $lg-multiplier );
+	}
+}
+
+@include media-breakpoint-up( xxl ) {
+	.product-search-inner {
+		padding-bottom: px-to-rem( 40px );
+	}
+}

@@ -1,0 +1,25 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+// Post
+.post-meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	font-size: $font-size-sm;
+	@include group( px-to-rem( 20px ), px-to-rem( 6px ) );
+}
+
+.post-meta-item {
+	display: inline-flex;
+}
+
+.post-meta-icon {
+	margin-right: px-to-rem( 5px );
+	font-size: 1.2em;
+	color: $primary-light;
+}

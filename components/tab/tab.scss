@@ -1,0 +1,50 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+
+// Base
+.tab-content {
+	padding-top: px-to-rem( 70px * $xs-multiplier );
+}
+
+
+// Spacing
+* + .tab { margin-top: 25px; }
+
+
+// Media
+@include media-breakpoint-up( md ) {
+	.tab-vertical {
+		display: flex;
+
+		.tab-embed {
+			min-width: 23%;
+			max-width: 40%;
+			margin-right: px-to-rem( 30px );
+		}
+
+		.tab-content {
+			padding-top: 0;
+		}
+	}
+
+	* + .tab { margin-top: 35px; }
+}
+
+@include media-breakpoint-up( lg ) {
+	.tab-content {
+		padding-top: px-to-rem( 70px * $lg-multiplier );
+	}
+
+	* + .tab { margin-top: px-to-rem( 48px ); }
+}
+
+@include media-breakpoint-up( xxl ) {
+	.tab-content {
+		padding-top: px-to-rem( 70px );
+	}
+}

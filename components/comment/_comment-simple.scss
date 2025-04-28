@@ -1,0 +1,36 @@
+// Base
+.comment-simple {
+	.comment-meta {
+		font-size: px-to-rem( 12px );
+	}
+
+	.comment-author {
+		font-weight: 600;
+	}
+
+	.comment-title {
+		color: $primary;
+	}
+
+	* + .comment-title { margin-top: px-to-rem( 10px * $xs-multiplier ) }
+}
+
+.comment-simple + .comment-simple { margin-top: px-to-rem( 30px * $xs-multiplier ) }
+
+
+// Media
+@include media-breakpoint-up( lg ) {
+	.comment-simple {
+		* + .comment-title { margin-top: px-to-rem( 10px * $lg-multiplier ) }
+	}
+
+	.comment-simple + .comment-simple { margin-top: px-to-rem( 30px * $lg-multiplier ) }
+}
+
+@include media-breakpoint-up( xxl ) {
+	.comment-simple {
+		* + .comment-title { margin-top: px-to-rem( 10px ) }
+	}
+
+	.comment-simple + .comment-simple { margin-top: px-to-rem( 30px ) }
+}

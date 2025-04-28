@@ -1,0 +1,19 @@
+// Base
+.widget-list-link {
+	margin-right: px-to-rem( 8px );
+	font-size: $h6-font-size;
+	line-height: $h6-line-height;
+	color: inherit;
+
+	&:hover {
+		color: $primary;
+	}
+}
+
+.widget-list-count {
+	color: $primary-light;
+}
+
+.widget-list-item + .widget-list-item {
+	margin-top: px-to-rem( 1px );
+}

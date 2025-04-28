@@ -1,0 +1,79 @@
+// Base
+.accordion-line {
+	.accordion-item {
+		border-bottom: 1px solid $border-color;
+	}
+
+	.accordion-head {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		padding: px-to-rem( 24px * $xs-multiplier, 0 );
+		cursor: pointer;
+		transition: $transition-base;
+
+		&::after {
+			display: inline-block;
+			margin-top: .1em;
+			margin-left: px-to-rem( 15px );
+			font-family: 'OnClinicFont';
+			font-size: px-to-rem( 16px );
+			font-weight: 700;
+			content: '\e907';
+			transition: transform .2s;
+		}
+
+		&:hover {
+			color: $primary;
+		}
+
+		&.active {
+			&::after {
+				transform: rotate( 180deg );
+				content: '\e905';
+			}
+		}
+	}
+
+	.accordion-item:first-child {
+		.accordion-head {
+			padding-top: 0;
+		}
+	}
+
+	.accordion-body {
+		padding-bottom: px-to-rem( 26px * $xs-multiplier );
+		font-size: px-to-rem( 15px );
+	}
+}
+
+h3 + .accordion-line { margin-top: px-to-rem( 56px * $xs-multiplier ) }
+
+// Media
+@include media-breakpoint-up( lg ) {
+	.accordion-line {
+		.accordion-head {
+			padding: px-to-rem( 24px * $lg-multiplier, 0 );
+		}
+
+		.accordion-body {
+			padding-bottom: px-to-rem( 26px * $lg-multiplier );
+		}
+	}
+
+	h3 + .accordion-line { margin-top: px-to-rem( 56px * $lg-multiplier ) }
+}
+
+@include media-breakpoint-up( xxl ) {
+	.accordion-line {
+		.accordion-head {
+			padding: px-to-rem( 24px, 0 );
+		}
+
+		.accordion-body {
+			padding-bottom: px-to-rem( 26px );
+		}
+	}
+
+	h3 + .accordion-line { margin-top: px-to-rem( 56px ) }
+}

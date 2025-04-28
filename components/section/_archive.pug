@@ -1,0 +1,84 @@
+include ../product/_product
+
+// Archive
+section.section.section-md.bg-transparent
+	.container
+		.text-block.text-block-1
+			h1 Store Catalog
+		.row.row-40.row-content.flex-md-row-reverse
+			.col-md-8.col-lg-9
+				.product-search
+					.product-search-inner
+						.product-search-form.form-group.select-wrap
+							select.select2( name='price', data-select2-options!={placeholder: 'Sort by price: High to low'} )
+								option( label='placeholder' )
+								option Sort by price: High to low
+								option Sort by price: Low to high
+								option Sort by popularity
+						.product-search-results Showing 1-16 of 17 results
+
+				.row.row-30.row-lg-50.row-content
+					.col-xs-6.col-lg-4
+						+product-extended({
+							img: 'product-02-260x260',
+							tags: [
+								{ title: 'Sale', class: 'tag-tertiary' },
+								{ title: 'New' }
+							],
+							title: 'Drones',
+							text: 'DJI Inspire 2',
+							price: '$45.89'
+						})
+					.col-xs-6.col-lg-4
+						+product-extended({
+							img: 'product-03-260x260',
+							tags: [
+								{ title: 'New' }
+							],
+							title: 'Drones',
+							text: 'DJI Phantom 4',
+							price: '$45.89'
+						})
+					.col-xs-6.col-lg-4
+						+product-extended({
+							img: 'product-04-260x260',
+							title: 'Drones',
+							text: 'DJI Mavic 2',
+							price: '$45.89'
+						})
+
+					.col-xs-6.col-lg-4
+						+product-extended({
+							img: 'product-05-260x260',
+							title: 'Drones',
+							text: 'Ryze Tello Drone',
+							price: '$45.89'
+						})
+					.col-xs-6.col-lg-4
+						+product-extended({
+							img: 'product-06-260x260',
+							title: 'Drones',
+							text: 'Parrot Anafi',
+							price: '$45.89'
+						})
+					.col-xs-6.col-lg-4
+						+product-extended({
+							img: 'product-07-260x260',
+							title: 'Drones',
+							text: 'ProFlight Orbit',
+							price: '$45.89'
+						})
+
+					.col-xs-6.col-lg-4
+						+product-extended({
+							img: 'product-08-260x260',
+							title: 'Drones',
+							text: 'ProFlight Seeker',
+							price: '$45.89'
+						})
+
+			.col-md-4.col-lg-3
+				include ../widget/_widget-filter
+				include ../widget/_widget-cart
+				include ../widget/_widget-sorting
+				include ../widget/_widget-price-range
